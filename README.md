@@ -1,4 +1,4 @@
-![Banner Image](https://raw.githubusercontent.com/Itskoushik/Parallax-project/6d05e28e14ca56150aba5aa09810f4904ef73093/img/koushik%20banner%20w.png)
+![Banner Image](https://github.com/Itskoushik/Parallax-project/blob/main/img/koushik%20banner%20w.png?raw=true)
 
 <h1 align="center">Hi 👋, I'm Koushik Ram</h1>
 <h3 align="center">A passionate full stack developer from India</h3>
