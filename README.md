@@ -5,7 +5,7 @@
 
 - 🌱 I’m currently learning **flask**
 
-- 👯 I’m helping by collaborating on **Agri project**
+- 👯 I’m collaborating on **Agri project**
 
 - 👨‍💻 All of my projects are available at [https://github.com/Itskoushik](https://github.com/Itskoushik)
 
