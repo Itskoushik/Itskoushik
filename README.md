@@ -5,11 +5,11 @@
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=itskoushik&label=Profile%20views&color=0e75b6&style=flat" alt="itskoushik" /> </p>
 
-- 🔭 I’m currently working on **mega project (music app)**
+- 🔭 I’m currently working on **UI/UX designs using figma project**
 
-- 🌱 I’m currently learning **flask**
+- 🌱 I’m currently learning **Express.js and Rest APIs**
 
-- 👯 I’m collaborating on **Agri project**
+- 👯 DM me for collaborations 
 
 - 👨‍💻 All of my projects are available at [https://github.com/Itskoushik](https://github.com/Itskoushik)
 
