@@ -53,8 +53,6 @@
 <details open>
 <summary>GitHub Stats</summary>
 
-<p align="center">
-    <img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=itskoushik&" alt="itskoushik"/></p>
 
 <p align="center"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=itskoushik" alt="itskoushik" /></a> </p>
 
