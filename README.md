@@ -60,12 +60,12 @@
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=itskoushik&layout=compact" height="180"/>
 
 </div>
-<br>
+
 
 <p align="center"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=itskoushik" alt="itskoushik" /></a> </p>
 
 </details>
-
+<br>
 
 
 
