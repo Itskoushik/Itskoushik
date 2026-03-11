@@ -4,24 +4,37 @@
 
 <br/>
 
-<img src="https://readme-typing-svg.demolab.com?font=Caveat&size=30&duration=2800&pause=900&color=C4622D&center=true&vCenter=true&width=620&lines=hey+there%2C+i%27m+koushik+%F0%9F%91%8B;i+build+things+that+actually+work+%E2%9C%85;clean+code+%2B+good+coffee+%2B+lofi+beats+%E2%98%95;open+to+collabs+%26+full-time+roles+%F0%9F%9A%80" />
+<img src="https://readme-typing-svg.demolab.com?font=Caveat&size=30&duration=2800&pause=900&color=C4622D&center=true&vCenter=true&width=620&lines=hey+there%2C+i%27m+koushik+%F0%9F%91%8B;i+build+things+that+actually+work+%E2%9C%85;clean+code+%2B+good+coffee+%2B+lofi+beats+%E2%98%95;open+to+collabs+%26+full-time+roles+%F0%9F%9A%80"/>
 
 <br/>
 
-<!-- MODERN PILL BADGES ROW -->
-<a href="https://linkedin.com/in/itskoushikram"><img src="https://img.shields.io/badge/%20LinkedIn-%230A66C2?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0A66C2"/></a>&nbsp;
-<a href="https://koushikram.netlify.app"><img src="https://img.shields.io/badge/%20Portfolio-%23C4622D?style=for-the-badge&logo=safari&logoColor=white&labelColor=C4622D"/></a>&nbsp;
-<a href="https://github.com/Itskoushik"><img src="https://img.shields.io/badge/%20GitHub-%23161B22?style=for-the-badge&logo=github&logoColor=white&labelColor=161B22"/></a>&nbsp;
-<a href="https://x.com/koushik_ram18"><img src="https://img.shields.io/badge/%20Twitter-%23000000?style=for-the-badge&logo=x&logoColor=white&labelColor=000000"/></a>&nbsp;
-<a href="mailto:koushik.d.ram@gmail.com"><img src="https://img.shields.io/badge/%20Gmail-%23EA4335?style=for-the-badge&logo=gmail&logoColor=white&labelColor=EA4335"/></a>
+<!-- MODERN SOCIAL PILLS -->
+<a href="https://linkedin.com/in/itskoushikram">
+  <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
+</a>&nbsp;
+<a href="https://koushikram.netlify.app">
+  <img src="https://img.shields.io/badge/Portfolio-C4622D?style=for-the-badge&logo=safari&logoColor=white"/>
+</a>&nbsp;
+<a href="https://github.com/Itskoushik">
+  <img src="https://img.shields.io/badge/GitHub-161B22?style=for-the-badge&logo=github&logoColor=white"/>
+</a>&nbsp;
+<a href="https://x.com/koushik_ram18">
+  <img src="https://img.shields.io/badge/Twitter-000000?style=for-the-badge&logo=x&logoColor=white"/>
+</a>&nbsp;
+<a href="mailto:koushik.d.ram@gmail.com">
+  <img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/>
+</a>
 
 <br/><br/>
 
 <!-- STATUS CHIPS -->
-<img src="https://img.shields.io/badge/🔬%20Harvel%20Systems-Currently%20Here-C4622D?style=flat-square&labelColor=FAF4E8&color=C4622D"/>
-<img src="https://img.shields.io/badge/📍%20Bengaluru-India-7B9BB5?style=flat-square&labelColor=FAF4E8&color=7B9BB5"/>
-<img src="https://img.shields.io/badge/🟢%20Open%20to%20Work-Full%20Time%20%26%20Contracts-7A9E7E?style=flat-square&labelColor=FAF4E8&color=7A9E7E"/>
-<img src="https://img.shields.io/badge/✨%20CGPA-8.538-9B8DB0?style=flat-square&labelColor=FAF4E8&color=9B8DB0"/>
+<img src="https://img.shields.io/badge/🔬_Harvel_Systems-Currently_Here-C4622D?style=flat-square&labelColor=FAF4E8"/>
+&nbsp;
+<img src="https://img.shields.io/badge/📍_Bengaluru-India-7B9BB5?style=flat-square&labelColor=FAF4E8"/>
+&nbsp;
+<img src="https://img.shields.io/badge/🟢_Open_to_Work-Full_Time_%26_Contracts-7A9E7E?style=flat-square&labelColor=FAF4E8"/>
+&nbsp;
+<img src="https://img.shields.io/badge/✨_CGPA-8.538-9B8DB0?style=flat-square&labelColor=FAF4E8"/>
 
 </div>
 
@@ -48,31 +61,39 @@ class KoushikRam:
 
 ---
 
-## 🎵 &nbsp; currently vibing to
+## 🎵 &nbsp; now playing
 
-<!-- SPOTIFY EMBED — Arijit Singh -->
-[![spotify](https://img.shields.io/badge/Open%20in%20Spotify-1DB954?style=for-the-badge&logo=spotify&logoColor=white)](https://open.spotify.com/artist/4YRxDV8wJFPHPTeXepOstw)
-
-[<img src="https://spotify-github-profile.kittinanx.com/api/view?uid=31qvdanxmfn3jlwpvgwjlqpafmiu&cover_image=true&theme=novatorem&show_offline=false&background_color=FAF4E8&interchange=true&bar_color=C4622D&bar_color_cover=true" alt="spotify"/>](https://open.spotify.com/artist/4YRxDV8wJFPHPTeXepOstw)
+<!-- ========================================================= -->
+<!--  STEP 1 — connect your spotify once:                      -->
+<!--  👉 https://spotify-github-profile.kittinanx.com/api/login -->
+<!--  STEP 2 — replace YOUR_SPOTIFY_UID below with your uid    -->
+<!-- ========================================================= -->
 
 <div align="center">
 
-**🎧 pick your player — arijit singh playlist**
+[![spotify-github-profile](https://spotify-github-profile.kittinanx.com/api/view?uid=j0cudn96thbe1bwlu3ywkznw1&cover_image=true&theme=novatorem&show_offline=false&background_color=faf4e8&interchange=true&bar_color=c4622d&bar_color_cover=true)](https://open.spotify.com/user/j0cudn96thbe1bwlu3ywkznw1)
 
 <br/>
 
-[<img src="https://img.shields.io/badge/▶%20%20Play%20on%20Spotify-Arijit%20Singh%20Hits-1DB954?style=for-the-badge&logo=spotify&logoColor=white&labelColor=0D0D0D"/>](https://open.spotify.com/playlist/37i9dQZF1DX3YSRoSdA634)
-&nbsp;&nbsp;
-[<img src="https://img.shields.io/badge/▶%20%20Play%20on%20Apple%20Music-Arijit%20Singh%20Essentials-FA243C?style=for-the-badge&logo=apple&logoColor=white&labelColor=0D0D0D"/>](https://music.apple.com/in/playlist/arijit-singh-essentials/pl.9b8d2d8364384d9e8f2d4c7f8b5c9e7a)
-&nbsp;&nbsp;
-[<img src="https://img.shields.io/badge/▶%20%20Play%20on%20YouTube-Arijit%20Singh%20Live-FF0000?style=for-the-badge&logo=youtube&logoColor=white&labelColor=0D0D0D"/>](https://www.youtube.com/watch?v=Umqb9KENgmk)
+**or just tap below to listen along 🎧**
 
 <br/>
 
-<!-- SPOTIFY IFRAME EMBED — renders on GitHub -->
-<a href="https://open.spotify.com/playlist/37i9dQZF1DX3YSRoSdA634">
-<img src="https://img.shields.io/badge/--%20tum%20hi%20ho%20%E2%80%A2%20channa%20mereya%20%E2%80%A2%20ae%20dil%20hai%20mushkil%20%E2%80%A2%20kesariya%20--%20-FAF4E8?style=flat-square&labelColor=FAF4E8&color=FAF4E8"/>
-</a>
+<!-- ARIJIT SINGH — SPOTIFY EMBED PLAYLIST CARD -->
+[![Spotify — Arijit Singh](https://img.shields.io/badge/▶%20%20Spotify-Arijit%20Singh%20%E2%80%A2%20Top%20Hits-1DB954?style=for-the-badge&logo=spotify&logoColor=white&labelColor=0D0D0D)](https://open.spotify.com/playlist/37i9dQZF1DX3YSRoSdA634)
+&nbsp;
+[![Apple Music — Arijit Singh](https://img.shields.io/badge/▶%20%20Apple%20Music-Arijit%20Singh%20%E2%80%A2%20Essentials-FA243C?style=for-the-badge&logo=apple&logoColor=white&labelColor=0D0D0D)](https://music.apple.com/in/artist/arijit-singh/558916507)
+&nbsp;
+[![YouTube — Arijit Singh](https://img.shields.io/badge/▶%20%20YouTube-Arijit%20Singh%20%E2%80%A2%20Live-FF0000?style=for-the-badge&logo=youtube&logoColor=white&labelColor=0D0D0D)](https://www.youtube.com/watch?v=Umqb9KENgmk)
+
+<br/>
+
+<!-- SONG CHIPS -->
+<img src="https://img.shields.io/badge/♪-Tum%20Hi%20Ho-C4622D?style=flat-square&labelColor=FAF4E8"/>
+<img src="https://img.shields.io/badge/♪-Channa%20Mereya-7A9E7E?style=flat-square&labelColor=FAF4E8"/>
+<img src="https://img.shields.io/badge/♪-Ae%20Dil%20Hai%20Mushkil-7B9BB5?style=flat-square&labelColor=FAF4E8"/>
+<img src="https://img.shields.io/badge/♪-Kesariya-9B8DB0?style=flat-square&labelColor=FAF4E8"/>
+<img src="https://img.shields.io/badge/♪-Phir%20Bhi%20Tumko%20Chaahunga-C4622D?style=flat-square&labelColor=FAF4E8"/>
 
 </div>
 
@@ -82,7 +103,7 @@ class KoushikRam:
 
 <table width="100%">
 <tr>
-<td align="center" width="70">
+<td align="center" width="72">
 <img src="https://img.shields.io/badge/01-C4622D?style=for-the-badge&labelColor=FAF4E8&color=C4622D"/>
 </td>
 <td>
@@ -99,14 +120,14 @@ Built multi-threaded **PyQt5 GUI** for Hindustan Aeronautics Limited (HAL) · Ex
 <tr><td colspan="2"><br/></td></tr>
 
 <tr>
-<td align="center" width="70">
+<td align="center" width="72">
 <img src="https://img.shields.io/badge/02-7A9E7E?style=for-the-badge&labelColor=FAF4E8&color=7A9E7E"/>
 </td>
 <td>
 
 **QA Automation Trainee** &nbsp;·&nbsp; Qspiders, Rajajinagar &nbsp;·&nbsp; `May – Nov 2025`
 
-End-to-end test automation for **ShopperStack & QBank** · Critical bug discovery in Steam game "7 Blood Moons" · CI/CD with **Docker, Jenkins & Kubernetes**
+End-to-end test automation for **ShopperStack & QBank** · Critical bug discovery in Steam game *"7 Blood Moons"* · CI/CD with **Docker, Jenkins & Kubernetes**
 
 <img src="https://img.shields.io/badge/Selenium-7A9E7E?style=flat-square&logo=selenium&logoColor=white"/> <img src="https://img.shields.io/badge/Pytest-7A9E7E?style=flat-square&logo=pytest&logoColor=white"/> <img src="https://img.shields.io/badge/Docker-7A9E7E?style=flat-square&logo=docker&logoColor=white"/> <img src="https://img.shields.io/badge/Kubernetes-7A9E7E?style=flat-square&logo=kubernetes&logoColor=white"/> <img src="https://img.shields.io/badge/Jenkins-7A9E7E?style=flat-square&logo=jenkins&logoColor=white"/>
 
@@ -116,14 +137,14 @@ End-to-end test automation for **ShopperStack & QBank** · Critical bug discover
 <tr><td colspan="2"><br/></td></tr>
 
 <tr>
-<td align="center" width="70">
+<td align="center" width="72">
 <img src="https://img.shields.io/badge/03-7B9BB5?style=for-the-badge&labelColor=FAF4E8&color=7B9BB5"/>
 </td>
 <td>
 
 **UI/UX Design Intern** &nbsp;·&nbsp; Zidio Development &nbsp;·&nbsp; `Oct 2024 – Feb 2025`
 
-Designed Nitro Drink website → **+35% brand visibility · 5,000+ monthly visitors** · Built task management tool that shipped on time
+Designed Nitro Drink website → **+35% brand visibility · 5,000+ monthly visitors** · Built a task management tool that shipped on time
 
 <img src="https://img.shields.io/badge/Figma-7B9BB5?style=flat-square&logo=figma&logoColor=white"/> <img src="https://img.shields.io/badge/Framer-7B9BB5?style=flat-square&logo=framer&logoColor=white"/> <img src="https://img.shields.io/badge/Canva-7B9BB5?style=flat-square&logo=canva&logoColor=white"/>
 
@@ -154,37 +175,37 @@ Designed Nitro Drink website → **+35% brand visibility · 5,000+ monthly visit
 
 **— languages —**
 
-![Python](https://img.shields.io/badge/Python-%23C4622D.svg?style=for-the-badge&logo=python&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-%23C4622D.svg?style=for-the-badge&logo=javascript&logoColor=white)
-![Java](https://img.shields.io/badge/Java-%23C4622D.svg?style=for-the-badge&logo=openjdk&logoColor=white)
-![C](https://img.shields.io/badge/C-%23C4622D.svg?style=for-the-badge&logo=c&logoColor=white)
-![PHP](https://img.shields.io/badge/PHP-%23C4622D.svg?style=for-the-badge&logo=php&logoColor=white)
-![Solidity](https://img.shields.io/badge/Solidity-%23C4622D.svg?style=for-the-badge&logo=solidity&logoColor=white)
+![Python](https://img.shields.io/badge/Python-C4622D?style=for-the-badge&logo=python&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-C4622D?style=for-the-badge&logo=javascript&logoColor=white)
+![Java](https://img.shields.io/badge/Java-C4622D?style=for-the-badge&logo=openjdk&logoColor=white)
+![C](https://img.shields.io/badge/C-C4622D?style=for-the-badge&logo=c&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-C4622D?style=for-the-badge&logo=php&logoColor=white)
+![Solidity](https://img.shields.io/badge/Solidity-C4622D?style=for-the-badge&logo=solidity&logoColor=white)
 
 <br/>
 
 **— frameworks & testing —**
 
-![React](https://img.shields.io/badge/React-%237A9E7E.svg?style=for-the-badge&logo=react&logoColor=white)
-![Next.js](https://img.shields.io/badge/Next.js-%237A9E7E.svg?style=for-the-badge&logo=nextdotjs&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-%237A9E7E.svg?style=for-the-badge&logo=fastapi&logoColor=white)
-![Selenium](https://img.shields.io/badge/Selenium-%237A9E7E.svg?style=for-the-badge&logo=selenium&logoColor=white)
-![Pytest](https://img.shields.io/badge/Pytest-%237A9E7E.svg?style=for-the-badge&logo=pytest&logoColor=white)
-![PyQt5](https://img.shields.io/badge/PyQt5-%237A9E7E.svg?style=for-the-badge&logo=qt&logoColor=white)
-![Tailwind](https://img.shields.io/badge/Tailwind-%237A9E7E.svg?style=for-the-badge&logo=tailwindcss&logoColor=white)
-![Appium](https://img.shields.io/badge/Appium-%237A9E7E.svg?style=for-the-badge&logo=appium&logoColor=white)
+![React](https://img.shields.io/badge/React-7A9E7E?style=for-the-badge&logo=react&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-7A9E7E?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-7A9E7E?style=for-the-badge&logo=fastapi&logoColor=white)
+![Selenium](https://img.shields.io/badge/Selenium-7A9E7E?style=for-the-badge&logo=selenium&logoColor=white)
+![Pytest](https://img.shields.io/badge/Pytest-7A9E7E?style=for-the-badge&logo=pytest&logoColor=white)
+![PyQt5](https://img.shields.io/badge/PyQt5-7A9E7E?style=for-the-badge&logo=qt&logoColor=white)
+![Tailwind](https://img.shields.io/badge/Tailwind-7A9E7E?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![Appium](https://img.shields.io/badge/Appium-7A9E7E?style=for-the-badge&logo=appium&logoColor=white)
 
 <br/>
 
 **— cloud & devops —**
 
-![Docker](https://img.shields.io/badge/Docker-%237B9BB5.svg?style=for-the-badge&logo=docker&logoColor=white)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-%237B9BB5.svg?style=for-the-badge&logo=kubernetes&logoColor=white)
-![Jenkins](https://img.shields.io/badge/Jenkins-%237B9BB5.svg?style=for-the-badge&logo=jenkins&logoColor=white)
-![AWS](https://img.shields.io/badge/AWS-%237B9BB5.svg?style=for-the-badge&logo=amazonaws&logoColor=white)
-![GCP](https://img.shields.io/badge/GCP-%237B9BB5.svg?style=for-the-badge&logo=googlecloud&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-%237B9BB5.svg?style=for-the-badge&logo=mongodb&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-%237B9BB5.svg?style=for-the-badge&logo=mysql&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-7B9BB5?style=for-the-badge&logo=docker&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-7B9BB5?style=for-the-badge&logo=kubernetes&logoColor=white)
+![Jenkins](https://img.shields.io/badge/Jenkins-7B9BB5?style=for-the-badge&logo=jenkins&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-7B9BB5?style=for-the-badge&logo=amazonaws&logoColor=white)
+![GCP](https://img.shields.io/badge/GCP-7B9BB5?style=for-the-badge&logo=googlecloud&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-7B9BB5?style=for-the-badge&logo=mongodb&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-7B9BB5?style=for-the-badge&logo=mysql&logoColor=white)
 
 </div>
 
