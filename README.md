@@ -22,19 +22,16 @@
 ## `01 /` IDENTITY
 
 ```
-┌──────────────────────────────────────────────────────────────────────┐
-│  SOFTWARE ENGINEER — Zing Technologies, Bengaluru                    │
-│  1 year of experience · Python systems · test automation · serverless│
-│                                                                        │
-│  Built a PyQt5 hardware test platform for HAL's ALH helicopter       │
-│  programme end to end — cutting stabilisation builds 40 → 4 across   │
-│  four releases, zero critical defects from release 3 through sign-off│
-│                                                                        │
-│  Deployed an AWS serverless platform now used by 50+ people           │
-│  across 7 teams.                                                     │
-│                                                                        │
-│  Seeking: Software Engineer roles in a product organisation.         │
-└──────────────────────────────────────────────────────────────────────┘
+SOFTWARE ENGINEER — Zing Technologies, Bengaluru
+1 year of experience · Python systems · test automation · serverless
+------------------------------------------------------------------------
+Built a PyQt5 hardware test platform for HAL's ALH helicopter programme
+end to end, cutting stabilisation builds 40 -> 4 across four releases,
+zero critical defects from release 3 through sign-off.
+
+Deployed an AWS serverless platform now used by 50+ people across 7 teams.
+
+Seeking: Software Engineer roles in a product organisation.
 ```
 
 <br/>
@@ -46,18 +43,21 @@
 <td width="33%" valign="top">
 
 **⚙ AUTOMATION**
+
 Test automation for hardware & software workflows — multi-threaded execution, fault-tolerant device comms.
 
 </td>
 <td width="33%" valign="top">
 
 **🌐 BACKEND & CLOUD**
+
 Serverless services on AWS Lambda, MongoDB-backed platforms, REST APIs with FastAPI.
 
 </td>
 <td width="33%" valign="top">
 
 **🧪 TESTING & QA**
+
 pytest regression suites, unit/integration/functional testing, code review standards.
 
 </td>
@@ -66,18 +66,21 @@ pytest regression suites, unit/integration/functional testing, code review stand
 <td width="33%" valign="top">
 
 **🚀 DEVOPS / CI-CD**
+
 Jenkins, Docker, Kubernetes, GitHub Actions pipelines replacing manual release steps.
 
 </td>
 <td width="33%" valign="top">
 
 **🔌 HARDWARE INTEGRATION**
+
 SCPI/VISA & serial comms across oscilloscopes, PSUs, DMMs, audio analyzers, microcontrollers.
 
 </td>
 <td width="33%" valign="top">
 
 **👁 AI / COMPUTER VISION**
+
 OpenCV + MediaPipe pipelines for gaze- and gesture-driven interaction.
 
 </td>
@@ -328,7 +331,7 @@ FRONTEND / WEB         █████████
 <img src="https://github-readme-stats.vercel.app/api?username=itskoushik&show_icons=true&bg_color=050505&title_color=C2FFC7&text_color=ffffff&icon_color=CB9DF0&border_color=C2FFC7&hide_border=false" height="180"/>
 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=itskoushik&layout=compact&bg_color=050505&title_color=C2FFC7&text_color=ffffff&border_color=C2FFC7&hide_border=false" height="180"/>
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=itskoushik&background=050505&ring=C2FFC7&fire=CB9DF0&currStreakLabel=C2FFC7&sideLabels=ffffff&border=C2FFC7" height="180"/>
+<img src="https://streak-stats.demolab.com/?user=itskoushik&background=050505&ring=C2FFC7&fire=CB9DF0&currStreakLabel=C2FFC7&sideLabels=ffffff&border=C2FFC7" height="180"/>
 
 <img src="https://github-readme-activity-graph.vercel.app/graph?username=itskoushik&theme=github-compact&bg_color=050505&color=C2FFC7&line=CB9DF0&point=C2FFC7&area=true&hide_border=true" width="90%"/>
 
@@ -354,6 +357,7 @@ tooling. Open to Software Engineer roles in product-focused teams.
 <tr><td width="50%" valign="top">
 
 **Education**
+
 B.E., Information Science & Engineering
 MVJ College of Engineering, Bengaluru
 CGPA 8.54 / 10 · Dec 2021 – Jul 2025
@@ -361,6 +365,7 @@ CGPA 8.54 / 10 · Dec 2021 – Jul 2025
 </td><td width="50%" valign="top">
 
 **Certifications**
+
 Microsoft Azure AI Essentials
 Google Cloud Foundations & Generative AI
 Databricks Fundamentals
