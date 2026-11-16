@@ -1,0 +1,10 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="130" viewBox="0 0 1200 130" role="img" aria-labelledby="title desc">
+  <title id="title">Build. Break. Understand. Rebuild.</title>
+  <desc id="desc">A closing engineering motto framed by a minimal mint and lavender signal line.</desc>
+  <rect width="1200" height="130" rx="14" fill="#0B0A09" stroke="#51483B"/>
+  <path d="M34 65h150l18-18 18 36 18-18h160m400 0h160l18 18 18-36 18 18h160" fill="none" stroke="#B3232D" stroke-opacity=".7" stroke-width="1.5"/>
+  <circle cx="398" cy="65" r="3" fill="#B3232D"/><circle cx="802" cy="65" r="3" fill="#84232A"/>
+  <text x="600" y="59" text-anchor="middle" fill="#F3E8D2" font-family="Arial,sans-serif" font-size="25" font-weight="700" letter-spacing="2">BUILD. BREAK.</text>
+  <text x="600" y="91" text-anchor="middle" fill="#B3232D" font-family="monospace" font-size="13" letter-spacing="3">UNDERSTAND. REBUILD.</text>
+</svg>
+

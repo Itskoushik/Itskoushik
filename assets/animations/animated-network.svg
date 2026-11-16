@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 220" role="img" aria-labelledby="title desc">
+  <title id="title">Animated network transmission</title><desc id="desc">A moving crimson packet passes through connected backend and cloud nodes.</desc>
+  <rect width="720" height="220" rx="12" fill="#0B0A09" stroke="#3D3831"/>
+  <g stroke="#8A8174" stroke-width="2" fill="none"><path d="M90 112L245 63l125 60 140-70 120 75M90 112l125 64 155-53 145 55 140-70M245 63l-30 113M370 123l140-70M370 123l145 53M510 53l120 75"/></g>
+  <g fill="#171513" stroke="#D9CEBA" stroke-width="2"><circle cx="90" cy="112" r="14"/><circle cx="245" cy="63" r="14"/><circle cx="215" cy="176" r="14"/><circle cx="370" cy="123" r="16"/><circle cx="510" cy="53" r="14"/><circle cx="515" cy="176" r="14"/><circle cx="630" cy="128" r="14"/></g>
+  <circle cx="90" cy="112" r="4" fill="#B3232D"><animateMotion path="M0 0L155 -49L125 64L280 11L420 63L540 16" dur="3.6s" repeatCount="indefinite"/></circle>
+</svg>

@@ -1,0 +1,25 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">Koushik Ram — The Engineering Lab</title>
+  <desc id="desc">A dark engineering dashboard with connected system nodes and the message: Engineering systems. Automating reality. Building what's next.</desc>
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#B3232D" stroke-opacity=".07" stroke-width="1"/></pattern>
+    <linearGradient id="fade" x1="0" x2="1"><stop stop-color="#0B0A09"/><stop offset=".62" stop-color="#171513"/><stop offset="1" stop-color="#15121A"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1200" height="360" rx="18" fill="url(#fade)"/>
+  <rect width="1200" height="360" rx="18" fill="url(#grid)"/>
+  <rect x="1" y="1" width="1198" height="358" rx="17" fill="none" stroke="#B3232D" stroke-opacity=".26"/>
+  <path d="M760 0v360M800 0v360M840 0v360M880 0v360M920 0v360M960 0v360M1000 0v360M1040 0v360M1080 0v360M1120 0v360M1160 0v360" stroke="#84232A" stroke-opacity=".08"/>
+  <g fill="none" stroke="#B3232D" stroke-opacity=".45" stroke-width="1.5">
+    <path d="M830 88h110l55 55h105M830 180h75l55-55h100M830 272h145l50-50h75M950 88v184"/>
+    <path d="M1050 143v79M995 125h105M975 272h100" stroke="#84232A" stroke-opacity=".55"/>
+  </g>
+  <g filter="url(#glow)"><circle cx="830" cy="88" r="4" fill="#B3232D"/><circle cx="830" cy="180" r="4" fill="#84232A"/><circle cx="830" cy="272" r="4" fill="#B3232D"/><circle cx="1100" cy="143" r="4" fill="#84232A"/><circle cx="1100" cy="222" r="4" fill="#B3232D"/></g>
+  <text x="70" y="57" fill="#B3232D" font-family="monospace" font-size="13" letter-spacing="3">KOUSHIK RAM  /  THE ENGINEERING LAB</text>
+  <text x="65" y="151" fill="#F3E8D2" font-family="Arial,Helvetica,sans-serif" font-size="68" font-weight="700" letter-spacing="-2">ENGINEERING</text>
+  <text x="65" y="222" fill="#F3E8D2" font-family="Arial,Helvetica,sans-serif" font-size="68" font-weight="700" letter-spacing="-2">WHAT'S NEXT<tspan fill="#B3232D">.</tspan></text>
+  <text x="70" y="272" fill="#B3232D" font-family="monospace" font-size="16" letter-spacing="1">ENGINEERING SYSTEMS · AUTOMATING REALITY</text>
+  <text x="70" y="316" fill="#B7A88F" font-family="monospace" font-size="13">SOFTWARE ENGINEER  /  HARDWARE · BACKEND · CLOUD</text>
+  <text x="835" y="325" fill="#B7A88F" font-family="monospace" font-size="10" letter-spacing="2">SYSTEMS  /  SIGNALS  /  SOFTWARE</text>
+</svg>
+

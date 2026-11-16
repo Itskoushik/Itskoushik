@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" role="img" aria-labelledby="title desc">
+  <title id="title">Project Kōdan manga emblem</title><desc id="desc">An original crimson engineering seal formed from a circuit node and manga impact rays.</desc>
+  <circle cx="110" cy="110" r="92" fill="#11100F" stroke="#D9CEBA" stroke-width="2"/><circle cx="110" cy="110" r="72" fill="none" stroke="#B3232D" stroke-width="3" stroke-dasharray="22 8"><animateTransform attributeName="transform" type="rotate" from="0 110 110" to="360 110 110" dur="24s" repeatCount="indefinite"/></circle>
+  <path d="M110 48l12 44 41-16-29 33 35 26-46-5-13 45-12-45-46 5 35-26-29-33 41 16z" fill="#B3232D" stroke="#F3E8D2" stroke-width="2"/>
+  <circle cx="110" cy="110" r="11" fill="#F3E8D2"/><path d="M110 10v28M110 182v28M10 110h28M182 110h28" stroke="#D9CEBA" stroke-width="2"/>
+</svg>

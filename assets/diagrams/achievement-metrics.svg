@@ -1,0 +1,31 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="470" viewBox="0 0 1200 470" role="img" aria-labelledby="title desc">
+  <title id="title">Engineering impact, by context</title>
+  <desc id="desc">Professional work: stabilisation builds reduced from 40 to 4, 500 plus test cases, 56 pytest regression scripts, 50 plus users across 7 teams, 80 percent fewer manual follow-ups, 40 percent faster execution, 40 percent fewer mid-test aborts and 30 percent fewer cross-pipeline defects. Internship: 60 percent less test setup time and release cycles 35 percent shorter. Personal project: cursor latency reduced 77 percent. Education: CGPA 8.54 out of 10.</desc>
+  <rect width="1200" height="470" rx="16" fill="#0B0A09" stroke="#51483B"/>
+  <text x="32" y="38" fill="#B7A88F" font-family="monospace" font-size="12" letter-spacing="2">IMPACT LOG  /  METRICS RETAIN THEIR ORIGINAL SCOPE</text>
+  <rect x="24" y="58" width="748" height="388" rx="12" fill="#171513" stroke="#B3232D" stroke-opacity=".35"/>
+  <text x="48" y="91" fill="#B3232D" font-family="monospace" font-size="13" letter-spacing="2">01  PROFESSIONAL  ·  ZING TECHNOLOGIES</text>
+  <text x="48" y="156" fill="#F3E8D2" font-family="Arial,sans-serif" font-size="48" font-weight="700">40 <tspan fill="#777">→</tspan> <tspan fill="#B3232D">4</tspan></text>
+  <text x="49" y="180" fill="#B7A88F" font-family="monospace" font-size="12">STABILISATION BUILDS</text>
+  <g font-family="Arial,sans-serif" fill="#F3E8D2">
+    <text x="300" y="133" font-size="27" font-weight="700">500+</text><text x="300" y="153" fill="#B7A88F" font-family="monospace" font-size="11">TEST CASES</text>
+    <text x="490" y="133" font-size="27" font-weight="700">56</text><text x="490" y="153" fill="#B7A88F" font-family="monospace" font-size="11">PYTEST SCRIPTS</text>
+    <text x="635" y="133" font-size="27" font-weight="700">50+ / 7</text><text x="635" y="153" fill="#B7A88F" font-family="monospace" font-size="11">USERS / TEAMS</text>
+  </g>
+  <path d="M48 204h700" stroke="#33353B"/>
+  <g font-family="monospace" font-size="12" fill="#D8D8DC">
+    <text x="50" y="238"><tspan fill="#B3232D" font-weight="700">−80%</tspan><tspan dx="12">manual status follow-ups</tspan></text>
+    <text x="286" y="238"><tspan fill="#B3232D" font-weight="700">+40%</tspan><tspan dx="12">faster test execution</tspan></text>
+    <text x="527" y="238"><tspan fill="#B3232D" font-weight="700">−40%</tspan><tspan dx="12">mid-test aborts</tspan></text>
+    <text x="50" y="273"><tspan fill="#B3232D" font-weight="700">−30%</tspan><tspan dx="12">cross-pipeline defects</tspan></text>
+  </g>
+  <rect x="792" y="58" width="384" height="190" rx="12" fill="#171513" stroke="#84232A" stroke-opacity=".45"/>
+  <text x="816" y="91" fill="#84232A" font-family="monospace" font-size="13" letter-spacing="1.2">02  INTERNSHIP  ·  PYSPIDERS</text>
+  <text x="816" y="151" fill="#F3E8D2" font-family="Arial,sans-serif" font-size="38" font-weight="700">−60% <tspan fill="#84232A">/</tspan> −35%</text>
+  <text x="816" y="182" fill="#B7A88F" font-family="monospace" font-size="12">TEST SETUP TIME  /  RELEASE CYCLE</text>
+  <rect x="792" y="266" width="384" height="180" rx="12" fill="#171513" stroke="#84232A" stroke-opacity=".45"/>
+  <text x="816" y="299" fill="#84232A" font-family="monospace" font-size="13" letter-spacing="1.2">03  PROJECT + EDUCATION</text>
+  <text x="816" y="355" fill="#F3E8D2" font-family="Arial,sans-serif" font-size="34" font-weight="700">−77% <tspan fill="#B7A88F" font-size="14" font-weight="400">cursor latency</tspan></text>
+  <text x="816" y="407" fill="#F3E8D2" font-family="Arial,sans-serif" font-size="28" font-weight="700">8.54<tspan fill="#B7A88F" font-family="monospace" font-size="12" font-weight="400"> / 10  CGPA</tspan></text>
+</svg>
+

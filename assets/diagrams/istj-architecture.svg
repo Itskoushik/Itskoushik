@@ -1,0 +1,33 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">ISTJ hardware test platform architecture</title>
+  <desc id="desc">Operator drives a PyQt5 interface, which calls a device control layer and a test execution engine. The control layer connects by VISA, SCPI and serial to an oscilloscope, digital multimeter, power supply, audio analyzer and microcontroller. Results flow to Excel and PDF reports; SQLite stores configuration, calibration and access data.</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#B3232D"/></marker></defs>
+  <rect width="1200" height="520" rx="16" fill="#0B0A09" stroke="#51483B"/>
+  <text x="32" y="38" fill="#B3232D" font-family="monospace" font-size="13" letter-spacing="2">ISTJ  /  INDUSTRIAL TEST SYSTEM</text>
+  <text x="32" y="62" fill="#8B8377" font-family="monospace" font-size="11">CONTROL PATH  ·  MEASUREMENT  ·  TRACEABLE OUTPUT</text>
+  <g fill="#171513" stroke="#B3232D" stroke-opacity=".5" stroke-width="1.5">
+    <rect x="54" y="105" width="195" height="74" rx="10"/><rect x="294" y="105" width="225" height="74" rx="10"/><rect x="566" y="105" width="250" height="74" rx="10"/>
+    <rect x="910" y="90" width="235" height="60" rx="9"/><rect x="910" y="166" width="235" height="60" rx="9"/><rect x="910" y="242" width="235" height="60" rx="9"/><rect x="910" y="318" width="235" height="60" rx="9"/><rect x="910" y="394" width="235" height="60" rx="9"/>
+    <rect x="294" y="277" width="225" height="74" rx="10" stroke="#84232A"/><rect x="566" y="277" width="250" height="74" rx="10" stroke="#84232A"/><rect x="566" y="399" width="250" height="55" rx="10" stroke="#84232A"/>
+  </g>
+  <g fill="none" stroke="#B3232D" stroke-width="1.5" marker-end="url(#arrow)">
+    <path d="M249 142h42M519 142h42M816 142h78M816 142h49v54h29M816 142h55v130h23M816 142h61v206h17M816 142h67v282h9"/>
+    <path d="M396 179v91" stroke="#84232A"/><path d="M519 314h42" stroke="#84232A"/><path d="M691 179v90" stroke="#84232A"/><path d="M691 351v40" stroke="#84232A"/>
+  </g>
+  <g text-anchor="middle" font-family="Arial,sans-serif">
+    <text x="151" y="137" fill="#F3E8D2" font-size="17" font-weight="700">OPERATOR</text><text x="151" y="158" fill="#B7A88F" font-family="monospace" font-size="11">Engineer · Admin · Meta-admin</text>
+    <text x="406" y="137" fill="#F3E8D2" font-size="17" font-weight="700">PyQt5 GUI</text><text x="406" y="158" fill="#B7A88F" font-family="monospace" font-size="11">Sequencing · status · access</text>
+    <text x="691" y="137" fill="#F3E8D2" font-size="17" font-weight="700">DEVICE CONTROL LAYER</text><text x="691" y="158" fill="#B7A88F" font-family="monospace" font-size="11">VISA · SCPI · Serial · recovery</text>
+    <text x="1027" y="116" fill="#F3E8D2" font-size="14" font-weight="700">OSCILLOSCOPE</text><text x="1027" y="136" fill="#B7A88F" font-family="monospace" font-size="10">waveform measurement</text>
+    <text x="1027" y="192" fill="#F3E8D2" font-size="14" font-weight="700">DIGITAL MULTIMETER</text><text x="1027" y="212" fill="#B7A88F" font-family="monospace" font-size="10">electrical measurements</text>
+    <text x="1027" y="268" fill="#F3E8D2" font-size="14" font-weight="700">POWER SUPPLY</text><text x="1027" y="288" fill="#B7A88F" font-family="monospace" font-size="10">programmable output</text>
+    <text x="1027" y="344" fill="#F3E8D2" font-size="14" font-weight="700">AUDIO ANALYZER</text><text x="1027" y="364" fill="#B7A88F" font-family="monospace" font-size="10">audio signal analysis</text>
+    <text x="1027" y="420" fill="#F3E8D2" font-size="14" font-weight="700">MICROCONTROLLER</text><text x="1027" y="440" fill="#B7A88F" font-family="monospace" font-size="10">device under test / I/O</text>
+    <text x="406" y="310" fill="#F3E8D2" font-size="16" font-weight="700">TEST EXECUTION ENGINE</text><text x="406" y="332" fill="#B7A88F" font-family="monospace" font-size="10">Automated sequence · self-check</text>
+    <text x="691" y="310" fill="#F3E8D2" font-size="16" font-weight="700">REPORT GENERATION</text><text x="691" y="332" fill="#B7A88F" font-family="monospace" font-size="10">Run results · audit trail</text>
+    <text x="691" y="433" fill="#F3E8D2" font-size="14" font-weight="700">SQLITE</text><text x="691" y="448" fill="#B7A88F" font-family="monospace" font-size="9">Configuration · calibration · access</text>
+  </g>
+  <path d="M816 314h36v96" fill="none" stroke="#84232A" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="55" y="480" fill="#B7A88F" font-family="monospace" font-size="11">OUTPUT  →  EXCEL WORKBOOKS  /  PDF REPORTS</text>
+</svg>
+

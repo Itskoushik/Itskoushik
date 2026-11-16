@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 180" role="img" aria-labelledby="title desc">
+  <title id="title">Animated engineering circuit</title><desc id="desc">A crimson signal travels between an interface, control layer and hardware nodes.</desc>
+  <rect width="720" height="180" rx="12" fill="#0B0A09" stroke="#3D3831"/>
+  <g fill="#171513" stroke="#D9CEBA" stroke-opacity=".6"><rect x="34" y="58" width="160" height="64" rx="8"/><rect x="280" y="58" width="160" height="64" rx="8"/><rect x="526" y="58" width="160" height="64" rx="8"/></g>
+  <g fill="#F3E8D2" font-family="monospace" font-size="13" text-anchor="middle"><text x="114" y="96">INTERFACE</text><text x="360" y="96">CONTROL</text><text x="606" y="96">HARDWARE</text></g>
+  <path d="M194 90H280M440 90h86" stroke="#8A8174" stroke-width="2"/><path d="M194 90H280M440 90h86" stroke="#B3232D" stroke-width="3" stroke-dasharray="12 100" stroke-dashoffset="0"><animate attributeName="stroke-dashoffset" values="0;-112" dur="1.8s" repeatCount="indefinite"/></path>
+  <circle cx="194" cy="90" r="4" fill="#B3232D"/><circle cx="526" cy="90" r="4" fill="#B3232D"/>
+</svg>

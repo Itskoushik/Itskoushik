@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 104" role="img" aria-labelledby="title desc">
+  <title id="title">Manga chapter divider</title><desc id="desc">Ivory manga panel with an animated crimson ink stroke and space for chapter text.</desc>
+  <rect x="3" y="3" width="994" height="98" rx="4" fill="#11100F" stroke="#D9CEBA" stroke-width="2"/>
+  <path d="M25 79H385" fill="none" stroke="#B3232D" stroke-width="5" stroke-dasharray="360" stroke-dashoffset="0"><animate attributeName="stroke-dashoffset" values="0;360;0" dur="2.8s" repeatCount="indefinite"/></path>
+  <path d="M32 25h55M32 33h31M955 22v58M967 22v58" stroke="#D9CEBA" stroke-width="2" opacity=".55"/>
+  <text x="120" y="56" fill="#F3E8D2" font-family="monospace" font-size="15" letter-spacing="4">PROJECT KŌDAN  /  ENGINEERING CHRONICLES</text>
+  <circle cx="960" cy="78" r="4" fill="#B3232D"><animate attributeName="r" values="3;6;3" dur="1.8s" repeatCount="indefinite"/></circle>
+</svg>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 180" role="img" aria-labelledby="title desc">
+  <title id="title">Oscilloscope waveform</title><desc id="desc">A crimson test pulse moves across a manga-ink oscilloscope grid.</desc>
+  <rect width="720" height="180" rx="12" fill="#0B0A09" stroke="#3D3831"/><path d="M35 35H685M35 65H685M35 95H685M35 125H685M35 155H685M65 25V160M125 25V160M185 25V160M245 25V160M305 25V160M365 25V160M425 25V160M485 25V160M545 25V160M605 25V160M665 25V160" stroke="#D9CEBA" stroke-opacity=".11"/>
+  <path d="M38 100h95l20-2 18 4 18-4 19 2h40l12-55 22 0 13 55h51l14-2 16 4 17-4 17 2h155" fill="none" stroke="#B3232D" stroke-width="3" stroke-linejoin="round" stroke-dasharray="480" stroke-dashoffset="0"><animate attributeName="stroke-dashoffset" values="480;0;-480" dur="2.4s" repeatCount="indefinite"/></path>
+</svg>
