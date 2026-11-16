@@ -1,6 +1,8 @@
 <div align="center">
 
-<img src="assets/hero/hero-manga.gif" width="100%" alt="Project Kōdan manga cover: the Builder looks out over a crimson-lit city, introducing the engineering chronicles."/>
+<p align="center">
+  <img src="assets/hero/hero-manga.gif" width="85%" alt="Project Kōdan manga cover: the Builder looks out over a crimson-lit city, introducing the engineering chronicles."/>
+</p>
 
 # PROJECT KŌDAN
 ### THE ENGINEERING CHRONICLES
@@ -22,7 +24,9 @@
 ## CHAPTER 01 — THE DEVELOPER
 
 <div align="center">
-<img src="assets/chapters/developer-workstation.gif" width="100%" alt="The Builder types at a workstation as the monitor changes through a four-frame manga loop." loading="lazy"/>
+<p align="center">
+  <img src="assets/chapters/developer-workstation.gif" width="85%" alt="The Builder types at a workstation as the monitor changes through a four-frame manga loop." loading="lazy"/>
+</p>
 </div>
 
 I’m **Koushik Ram**, a Software Engineer at **Zing Technologies** in Bengaluru. I build software that connects people, services and hardware—from multi-threaded instrument control to serverless task platforms.
@@ -73,19 +77,22 @@ Built for structured testing on HAL’s ALH helicopter programme. ISTJ coordinat
 
 **[Explore the ISTJ source →](https://github.com/Itskoushik/ISTJ_test_jig)**
 
-### MISSION 02 · Fleet Management Dashboard
+### MISSION 02 — CHIPVEL: THE INSPECTION ARC
 
-**Frontend engineering · Peppermint SDE-1 challenge** · `React` `TypeScript` `Vite` `Recharts` `Vitest`
+**AUTOMATED CHIP INSPECTION** · `Kotlin` `Jetpack Compose` `Material 3` `CameraX` `TensorFlow Lite` `Room` `DataStore` `Kotlin Coroutines`
 
-An operator dashboard for an eight-robot fleet. Simulated live telemetry and recorded logs share one event-ingestion path, keeping live and replay views consistent.
+CHIPVEL is an Android application for camera-based electronic-chip inspection in a conveyor workflow. Its on-device TensorFlow Lite model detects chips and their markings, then applies inspection rules and presents a clear PASS or FAIL result to the operator.
 
-<img src="assets/projects/fleet-dashboard.gif" width="100%" alt="Manga control-room scene with an eight-robot fleet and an animated crimson telemetry route." loading="lazy"/>
+<p align="center">
+  <img src="assets/projects/chipvel.gif" width="85%" alt="CHIPVEL Android smartphone scanning an electronic chip using live camera inspection, on-device detection overlays and distinct PASS or FAIL results." loading="lazy"/>
+</p>
 
-- One `ingestEvent()` funnel for incoming and replayed telemetry.
-- `useFleetState` manages fleet state without Redux.
-- Unit-tested `advanceReplay()` supports variable-speed log replay from 1× to 10×.
+- CameraX live inspection with a configurable inspection region and stable-scene checks.
+- Chip and marking detection overlays, rule-based evaluation, and distinct PASS/FAIL outcomes.
+- Optional buzzer and voice announcements, local inspection history, and model diagnostics/performance information.
+- Simulation mode for workflow testing, separate from live camera inspection.
 
-**[Explore the dashboard source →](https://github.com/Itskoushik/peppermint)**
+**[Explore the CHIPVEL source →](https://github.com/Itskoushik/chipwell_v1)**
 
 ### MISSION 03 · EyeCue-IntelliSense
 
@@ -93,7 +100,9 @@ An operator dashboard for an eight-robot fleet. Simulated live telemetry and rec
 
 Touch-free computer interaction: gaze moves the cursor; hand gestures trigger clicks and scrolling.
 
-<img src="assets/projects/eyecue-vision.gif" width="100%" alt="Four manga frames show eye landmarks guiding a cursor, followed by a recognized hand gesture and a touch-free selection." loading="lazy"/>
+<p align="center">
+  <img src="assets/projects/eyecue-vision.gif" width="80%" alt="Four manga frames show eye landmarks guiding a cursor, followed by a recognized hand gesture and a touch-free selection." loading="lazy"/>
+</p>
 
 The project reports **77% lower cursor latency** after retraining on a cleaner dataset.
 
@@ -105,7 +114,9 @@ The project reports **77% lower cursor latency** after retraining on a cleaner d
 
 An election app combining authenticated voter access and application data with vote recording through an Ethereum smart contract and MetaMask.
 
-<img src="assets/projects/blockchain-network.gif" width="100%" alt="An original manga illustration of a voter and a connected ledger network, with an animated crimson data packet." loading="lazy"/>
+<p align="center">
+  <img src="assets/projects/blockchain-network.gif" width="80%" alt="An original manga illustration of a voter and a connected ledger network, with an animated crimson data packet." loading="lazy"/>
+</p>
 
 <img src="assets/animations/animated-network.svg" width="100%" alt="A crimson packet travels through a network of connected backend nodes." loading="lazy"/>
 
@@ -120,7 +131,9 @@ An election app combining authenticated voter access and application data with v
 Music discovery and streaming with search, playlists, favourite tracks and automatic queueing of similar songs.
 
 <div align="center">
-  <img src="assets/projects/hayasaka-music.gif" width="100%" alt="Animated manga illustration of Hayasaka Music showing song discovery, playback, playlist favourites and recommended tracks." loading="lazy"/>
+  <p align="center">
+    <img src="assets/projects/hayasaka-music.gif" width="80%" alt="Animated manga illustration of Hayasaka Music showing song discovery, playback, playlist favourites and recommended tracks." loading="lazy"/>
+  </p>
 </div>
 
 **[Source →](https://github.com/Itskoushik/hayasaka.music)** · **[Live demo →](https://hayasakamusic.netlify.app)**
@@ -128,7 +141,9 @@ Music discovery and streaming with search, playlists, favourite tracks and autom
 ## CHAPTER 04 — THE ENGINEERING LAB
 
 <div align="center">
-<img src="assets/chapters/engineering-lab.gif" width="100%" alt="The Engineer adjusts lab equipment while the oscilloscope waveform and instrument status change across four manga frames."/>
+<p align="center">
+  <img src="assets/chapters/engineering-lab.gif" width="85%" alt="The Engineer adjusts lab equipment while the oscilloscope waveform and instrument status change across four manga frames."/>
+</p>
 </div>
 
 At Zing Technologies, ISTJ work joined a PyQt5 interface to VISA/SCPI and serial device control. A separate AWS Lambda task platform, built with Python and MongoDB, serves **50+ users across 7 teams** and reduced manual status follow-ups by **80%**.
@@ -175,7 +190,9 @@ During my **Pyspiders** internship, two Python microservice test frameworks and 
 
 <div align="center">
 
-<img src="assets/footer/final-transmission.gif" width="100%" alt="The Builder looks out over a futuristic city as crimson light and ink particles drift through the final manga scene." loading="lazy"/>
+<p align="center">
+  <img src="assets/footer/final-transmission.gif" width="85%" alt="The Builder looks out over a futuristic city as crimson light and ink particles drift through the final manga scene." loading="lazy"/>
+</p>
 
 <a href="https://github.com/Itskoushik">GitHub</a> · <a href="https://linkedin.com/in/itskoushikram">LinkedIn</a> · <a href="https://itskoushik.netlify.app">Portfolio</a> · <a href="mailto:koushik.d.ram@gmail.com">Email</a> · <a href="https://x.com/koushik_ram18">X</a>
 

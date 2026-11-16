@@ -19,7 +19,7 @@
       --max: 1080px;
     }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 82px; }
     body {
       margin: 0;
       background: var(--ink);
@@ -45,13 +45,28 @@
       display: flex; align-items: center; justify-content: space-between; gap: 14px;
       padding: 16px 0; border-bottom: 1px solid var(--line); color: var(--paper-dim);
       font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
+      position: sticky; top: 0; z-index: 20; background: rgb(17 16 15 / .92); backdrop-filter: blur(12px);
     }
     .brand { color: var(--paper); font-weight: 800; letter-spacing: .18em; }
     .brand b { color: var(--red); }
     nav { display: flex; flex-wrap: wrap; gap: 14px; justify-content: flex-end; }
-    nav a { color: var(--paper-dim); text-decoration: none; }
-    .cover { padding: 28px 0 10px; }
-    .cover img { display: block; width: 100%; border: 1px solid var(--line); }
+    nav a { position: relative; color: var(--paper-dim); text-decoration: none; transition: color .2s ease; }
+    nav a::after { position: absolute; right: 0; bottom: -5px; left: 0; height: 1px; content: ""; background: var(--red); transform: scaleX(0); transform-origin: left; transition: transform .22s ease; }
+    nav a:hover, nav a[aria-current="location"] { color: var(--paper); }
+    nav a:hover::after, nav a[aria-current="location"]::after { transform: scaleX(1); }
+    .nav-toggle { display: none; color: var(--paper); background: transparent; border: 1px solid var(--line); padding: 8px 10px; font: inherit; cursor: pointer; }
+    .skip-link { position: fixed; top: 8px; left: 8px; z-index: 40; padding: 8px 12px; color: var(--paper); background: var(--ink); border: 1px solid var(--red); transform: translateY(-150%); }
+    .skip-link:focus { transform: translateY(0); }
+    .cover { position: relative; isolation: isolate; overflow: hidden; padding: 28px 0 18px; }
+    .cover::before, .cover::after { position: absolute; inset: 0; z-index: -1; content: ""; pointer-events: none; }
+    .cover::before { background: radial-gradient(ellipse at 50% 24%, rgb(193 18 31 / .17), transparent 54%); animation: crimson-breathe 9s ease-in-out infinite alternate; }
+    .cover::after { opacity: .3; background-image: radial-gradient(circle, rgb(242 235 221 / .65) 1px, transparent 1.7px), radial-gradient(circle, rgb(193 18 31 / .8) 1px, transparent 1.8px); background-size: 83px 97px, 127px 139px; background-position: 0 0, 38px 56px; mask-image: linear-gradient(180deg, transparent, #000 20%, #000 85%, transparent); animation: particle-drift 24s linear infinite; }
+    .cover picture { display: block; width: min(100%, 820px); margin: 0 auto; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 24px 80px rgb(0 0 0 / .4); }
+    .cover img { display: block; width: 100%; height: auto; border: 0; transform: translate3d(var(--parallax-x, 0), var(--parallax-y, 0), 0) scale(1.015); will-change: transform; }
+    .cover h1, .cover .subtitle, .cover .intro, .cover .contact-row { animation: title-arrive .8s cubic-bezier(.2,.7,.2,1) both; }
+    .cover .subtitle { animation-delay: .12s; }
+    .cover .intro { animation-delay: .2s; }
+    .cover .contact-row { animation-delay: .28s; }
     h1, h2, h3, p { margin-top: 0; }
     h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; }
     h1 { margin: 24px 0 2px; font-size: clamp(32px, 7vw, 72px); line-height: .98; letter-spacing: -.045em; }
@@ -60,18 +75,23 @@
     .intro { max-width: 760px; color: var(--paper-dim); font-family: Georgia, serif; font-size: 19px; }
     .contact-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0 8px; }
     .contact-row a { padding: 7px 12px; border: 1px solid var(--line); text-decoration: none; font-size: 11px; letter-spacing: .08em; }
-    .chapter { padding: 48px 0 8px; }
+    .chapter { padding: 48px 0 8px; scroll-margin-top: 82px; }
     .chapter-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 18px; border-bottom: 1px solid var(--line); }
     .chapter-no { color: var(--red); font-size: 12px; letter-spacing: .14em; white-space: nowrap; }
     h2 { margin: 0 0 12px; font-size: clamp(23px, 4vw, 34px); letter-spacing: -.02em; }
-    .chapter-image { margin: 0 0 24px; border: 1px solid var(--line); background: var(--panel); }
+    .chapter-head { position: relative; }
+    .chapter-head::after { position: absolute; right: 0; bottom: -1px; left: 0; height: 1px; content: ""; background: linear-gradient(90deg, var(--red), transparent 70%); transform: scaleX(0); transform-origin: left; transition: transform .8s cubic-bezier(.2,.7,.2,1); }
+    .chapter-head.is-visible::after { transform: scaleX(1); }
+    .js-ready [data-reveal] { opacity: 0; transform: translate3d(0, 20px, 0); transition: opacity .65s ease, transform .65s cubic-bezier(.2,.7,.2,1); transition-delay: var(--reveal-delay, 0ms); }
+    .js-ready [data-reveal].is-visible { opacity: 1; transform: translate3d(0, 0, 0); }
+    .chapter-image { max-width: 900px; margin: 0 auto 24px; border: 1px solid var(--line); background: var(--panel); }
     .chapter-image img { display: block; width: 100%; height: auto; }
     .chapter-image figcaption { padding: 8px 12px; color: var(--paper-dim); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; border-top: 1px solid var(--line); }
     .lede { max-width: 850px; color: var(--paper-dim); font-family: Georgia, serif; font-size: 17px; }
     .terminal { padding: 18px 20px; margin: 20px 0; background: #0b0a09; border: 1px solid var(--line); border-left: 3px solid var(--red); color: var(--paper-dim); overflow-x: auto; }
     .terminal strong { color: var(--paper); }
     .terminal .accent { color: var(--red); }
-    .cast { margin: 24px 0; }
+    .cast { max-width: 900px; margin: 24px auto; }
     .cast img { display: block; width: 100%; border: 1px solid var(--line); }
     .cast figcaption { color: var(--paper-dim); font-size: 11px; padding-top: 8px; }
     .arsenal { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 22px 0; }
@@ -87,14 +107,19 @@
     .next-cta { margin-top: 16px; padding: 14px 16px; border-left: 3px solid var(--red); color: var(--paper-dim); background: #0b0a09; }
     .next-cta strong { color: var(--red); letter-spacing: .12em; }
     .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
-    .project { padding: 0; overflow: hidden; }
-    .project.featured { grid-column: 1 / -1; }
-    .project figure { margin: 0; border-bottom: 1px solid var(--line); background: #0b0a09; }
-    .project figure img { display: block; width: 100%; height: auto; }
+    .project { padding: 0; overflow: hidden; border-color: var(--line); transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease; }
+    .project:hover, .project:focus-within { transform: translateY(-4px); border-color: var(--red); box-shadow: 0 16px 38px rgb(0 0 0 / .24); }
+    .project.featured { display: grid; grid-column: 1 / -1; grid-template-columns: minmax(0, 360px) minmax(0, 1fr); align-items: center; }
+    .project.featured > figure { display: grid; align-self: stretch; place-items: center; }
+    .project.featured > figure img { max-height: 480px; object-fit: contain; }
+    .project figure { margin: 0; overflow: hidden; border-bottom: 1px solid var(--line); background: #0b0a09; }
+    .project figure img { display: block; width: 100%; height: auto; transition: transform .6s cubic-bezier(.2,.7,.2,1), filter .3s ease; }
+    .project:hover figure img, .project:focus-within figure img { transform: scale(1.025); filter: saturate(1.06); }
     .project-copy { padding: 18px; }
     .project-kicker { margin: 0 0 7px; color: var(--red); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
     .project h3 { margin: 0 0 5px; font-size: 23px; }
     .stack { color: var(--paper-dim); font-size: 11px; }
+    .stack .tech-tag { display: inline-block; margin: 3px 4px 2px 0; padding: 2px 7px; color: var(--paper-dim); border: 1px solid var(--line); background: rgb(17 16 15 / .55); font-size: 10px; letter-spacing: .03em; }
     .project p, .project li { color: var(--paper-dim); font-size: 13px; }
     .project ul { padding-left: 18px; margin-bottom: 12px; }
     .project-link { display: inline-block; margin-top: 4px; color: var(--paper); font-size: 12px; font-weight: 700; }
@@ -102,7 +127,13 @@
     .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
     .telemetry-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
     .telemetry-grid figure { min-width: 0; margin: 0; background: var(--panel); border: 1px solid var(--line); }
-    .telemetry-grid img { display: block; width: 100%; height: auto; }
+    .telemetry-grid figure { position: relative; min-height: 150px; }
+    .telemetry-grid img { display: block; width: 100%; height: auto; opacity: 1; transition: opacity .35s ease; }
+    .js-ready .telemetry-grid figure.is-loading img { opacity: 0; }
+    .telemetry-grid figure.is-loaded img { opacity: 1; }
+    .js-ready .telemetry-grid figure.is-loading::before { position: absolute; inset: 0; content: ""; background: linear-gradient(100deg, transparent 20%, rgb(242 235 221 / .05) 38%, transparent 56%); background-size: 220% 100%; animation: loading-sheen 1.8s ease-in-out infinite; }
+    .telemetry-fallback { padding: 52px 16px; color: var(--paper-dim); text-align: center; font-size: 12px; }
+    .telemetry-fallback[hidden] { display: none; }
     .metric strong { display: block; color: var(--red); font: 700 30px Georgia, serif; }
     .metric span { color: var(--paper-dim); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
     .timeline { display: grid; gap: 10px; }
@@ -112,33 +143,52 @@
     .timeline-card p { margin: 0; color: var(--paper-dim); font-size: 13px; }
     .certs { color: var(--paper-dim); font-size: 13px; }
     .final { padding: 54px 0 24px; text-align: center; }
-    .final img { display: block; width: 100%; border: 1px solid var(--line); }
+    .final img { display: block; width: 100%; max-width: 900px; margin: 0 auto; border: 1px solid var(--line); }
     .final h2 { margin: 26px 0; font-size: clamp(24px, 5vw, 44px); }
     .final h2 span { color: var(--red); }
+    .contact-row a, .project-link { transition: color .2s ease, border-color .2s ease, transform .2s ease; }
+    .contact-row a:hover, .contact-row a:focus-visible { color: #fff; border-color: var(--red); transform: translateY(-2px); }
+    .project-link:hover, .project-link:focus-visible { color: #fff; }
     footer { padding: 16px 0 32px; color: var(--paper-dim); text-align: center; font-size: 10px; letter-spacing: .13em; text-transform: uppercase; }
+    @keyframes page-reveal { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes title-arrive { from { opacity: 0; transform: translateY(12px); clip-path: inset(0 0 45%); } to { opacity: 1; transform: translateY(0); clip-path: inset(0); } }
+    @keyframes crimson-breathe { from { opacity: .55; } to { opacity: 1; } }
+    @keyframes particle-drift { from { background-position: 0 0, 38px 56px; } to { background-position: 83px -194px, -89px -83px; } }
+    @keyframes loading-sheen { to { background-position: -220% 0; } }
+    .js-ready body { animation: page-reveal .7s ease both; }
+    :focus-visible { outline: 2px solid var(--red); outline-offset: 4px; }
     @media (max-width: 700px) {
-      .shell { width: min(100% - 24px, var(--max)); }
-      .topline { align-items: flex-start; flex-direction: column; }
-      nav { justify-content: flex-start; }
+      .shell { width: min(calc(100% - 24px), var(--max)); }
+      .topline { align-items: center; flex-wrap: wrap; flex-direction: row; }
+      .nav-toggle { display: inline-flex; align-items: center; gap: 8px; }
+      nav { display: flex; width: 100%; max-height: 0; justify-content: flex-start; overflow: hidden; padding: 0; opacity: 0; visibility: hidden; transform: translateY(-6px); transition: max-height .3s ease, opacity .2s ease, transform .3s ease, padding .3s ease, visibility 0s linear .3s; }
+      .topline.menu-open nav { max-height: 160px; padding: 8px 0 2px; opacity: 1; visibility: visible; transform: translateY(0); transition-delay: 0s; }
+      .cover { padding-top: 18px; }
+      .cover .intro { font-size: 17px; }
+      .chapter { scroll-margin-top: 150px; }
       .arsenal, .project-grid, .stats, .telemetry-grid { grid-template-columns: 1fr; }
       .focus-grid { grid-template-columns: 1fr; }
-      .project.featured { grid-column: auto; }
+      .project.featured { grid-column: auto; grid-template-columns: 1fr; }
       .timeline-card { grid-template-columns: 1fr; gap: 4px; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+      .js-ready [data-reveal] { opacity: 1; transform: none; }
     }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <header class="shell topline">
     <div class="brand">KŌDAN <b>///</b> FIELD LOG</div>
-    <nav aria-label="Chapter navigation">
-      <a href="#developer">Developer</a><a href="#arsenal">Arsenal</a><a href="#missions">Missions</a><a href="#journey">Journey</a><a href="#next">Next arc</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="chapter-navigation"><span aria-hidden="true">&#9776;</span> Chapters</button>
+    <nav id="chapter-navigation" aria-label="Chapter navigation">
+      <a href="#developer">Developer</a><a href="#arsenal">Arsenal</a><a href="#missions">Missions</a><a href="#engineering">Lab</a><a href="#impact">Impact</a><a href="#journey">Journey</a><a href="#telemetry">Telemetry</a><a href="#next">Next arc</a>
     </nav>
   </header>
 
-  <main class="shell">
+  <main class="shell" id="main-content">
     <section class="cover" aria-labelledby="cover-title">
       <picture><source srcset="assets/source/cover.jpg" media="(prefers-reduced-motion: reduce)"/><img src="assets/hero/hero-manga.gif" alt="The Builder stands above a crimson-lit city in the Project Kōdan manga cover." fetchpriority="high"/></picture>
       <h1 id="cover-title">PROJECT <em>KŌDAN</em></h1>
@@ -186,8 +236,8 @@
           </div>
         </article>
         <article class="project">
-          <figure><picture><source srcset="assets/source/fleet-dashboard.jpg" media="(prefers-reduced-motion: reduce)"/><img src="assets/projects/fleet-dashboard.gif" alt="Manga control-room scene with an eight-robot fleet and a moving crimson telemetry route." loading="lazy"/></picture></figure>
-          <div class="project-copy"><p class="project-kicker">Mission 02 · Frontend / systems design</p><h3>Fleet Management Dashboard</h3><p class="stack">React · TypeScript · Vite · Recharts · Vitest</p><p>Eight-robot operator dashboard. Simulated telemetry and recorded-log replay share one ingestion path; custom <code>useFleetState</code> manages state, and tested <code>advanceReplay()</code> supports 1×–10× playback.</p><a class="project-link" href="https://github.com/Itskoushik/peppermint">EXPLORE SOURCE →</a></div>
+          <figure><picture><source srcset="assets/source/chipvel.jpg" media="(prefers-reduced-motion: reduce)"/><img src="assets/projects/chipvel.gif" alt="CHIPVEL: an operator aims an Android phone's rear camera at a chip while the connected app preview shows detection and PASS or FAIL inspection states." loading="lazy"/></picture></figure>
+          <div class="project-copy"><p class="project-kicker">Mission 02 · Automated chip inspection</p><h3>CHIPVEL — The Inspection Arc</h3><p class="stack">Kotlin · Jetpack Compose · Material 3 · CameraX · TensorFlow Lite · Room · DataStore · Kotlin Coroutines</p><p>Android camera-based chip inspection for a conveyor workflow. The on-device TensorFlow Lite model detects chips and markings, applies inspection rules, and presents clear PASS or FAIL results.</p><ul><li>Live CameraX preview, configurable inspection region, and stable-scene checks.</li><li>Optional buzzer/voice announcements, local inspection history, and model diagnostics/performance information.</li><li>Simulation mode tests the workflow separately from live camera inspection.</li></ul><a class="project-link" href="https://github.com/Itskoushik/chipwell_v1">EXPLORE SOURCE →</a></div>
         </article>
         <article class="project">
           <figure><picture><source srcset="assets/source/eyecue-vision.jpg" media="(prefers-reduced-motion: reduce)"/><img src="assets/projects/eyecue-vision.gif" alt="Four manga frames show gaze tracking, cursor movement, hand-gesture recognition and touch-free selection." loading="lazy"/></picture></figure>
@@ -205,7 +255,7 @@
       </div>
     </section>
 
-    <section class="chapter">
+    <section class="chapter" id="engineering">
       <div class="chapter-head"><span class="chapter-no">CHAPTER 04</span><h2>The Engineering Lab</h2></div>
       <figure class="chapter-image"><picture><source srcset="assets/source/engineering-lab.jpg" media="(prefers-reduced-motion: reduce)"/><img src="assets/chapters/engineering-lab.gif" alt="The Engineer adjusts a test bench while the oscilloscope waveform and instrument status change." loading="lazy"/></picture><figcaption>VISA / SCPI / serial — one instrument control layer</figcaption></figure>
       <p class="lede">At Zing Technologies, the ISTJ system joins a PyQt5 interface to instrument control and automated execution. Separately, a Python/MongoDB task platform on AWS Lambda serves <strong>50+ users across 7 teams</strong> and reduced manual status follow-ups by <strong>80%</strong>.</p>
@@ -213,7 +263,7 @@
       <img class="architecture" src="assets/animations/animated-circuit.svg" alt="A crimson signal path links the interface, control layer and hardware." loading="lazy"/>
     </section>
 
-    <section class="chapter">
+    <section class="chapter" id="impact">
       <div class="chapter-head"><span class="chapter-no">CHAPTER 05</span><h2>The Impact</h2></div>
       <img class="architecture" src="assets/diagrams/achievement-metrics.svg" alt="Metrics grouped by source: Zing Technologies work, Pyspiders internship, EyeCue project and academic result." loading="lazy"/>
       <div class="stats">
@@ -237,9 +287,9 @@
     <section class="chapter" id="telemetry">
       <div class="chapter-head"><span class="chapter-no">FIELD DATA</span><h2>GitHub Telemetry</h2></div>
       <div class="telemetry-grid">
-        <figure><img src="assets/telemetry/github-stats.svg" alt="GitHub contribution and repository statistics" loading="lazy"/></figure>
-        <figure><img src="assets/telemetry/top-languages.svg" alt="Most-used languages across GitHub repositories" loading="lazy"/></figure>
-        <figure><img src="assets/telemetry/github-streak.svg" alt="GitHub contribution streak metrics" loading="lazy"/></figure>
+        <figure class="telemetry-card is-loading"><img src="assets/telemetry/github-stats.svg" alt="GitHub contribution and repository statistics" loading="lazy"/><figcaption class="telemetry-fallback" role="status" hidden>Telemetry card unavailable. Please try again after the next update.</figcaption></figure>
+        <figure class="telemetry-card is-loading"><img src="assets/telemetry/top-languages.svg" alt="Most-used languages across GitHub repositories" loading="lazy"/><figcaption class="telemetry-fallback" role="status" hidden>Telemetry card unavailable. Please try again after the next update.</figcaption></figure>
+        <figure class="telemetry-card is-loading"><img src="assets/telemetry/github-streak.svg" alt="GitHub contribution streak metrics" loading="lazy"/><figcaption class="telemetry-fallback" role="status" hidden>Telemetry card unavailable. Please try again after the next update.</figcaption></figure>
       </div>
     </section>
 
@@ -259,6 +309,7 @@
       <div class="contact-row" style="justify-content:center"><a href="https://github.com/Itskoushik">GITHUB</a><a href="https://linkedin.com/in/itskoushikram">LINKEDIN</a><a href="https://itskoushik.netlify.app">PORTFOLIO</a><a href="mailto:koushik.d.ram@gmail.com">EMAIL</a><a href="https://x.com/koushik_ram18">X</a></div>
     </section>
   </main>
+  <script src="assets/js/kodan-portfolio.js" defer></script>
   <footer class="shell">PROJECT KŌDAN · THE ENGINEERING CHRONICLES</footer>
 </body>
 </html>

@@ -196,7 +196,7 @@ Build-Animation 'cover.jpg' 'hero\hero-manga.gif' 'single' 720 405 'cover'
 Build-Animation 'workstation.jpg' 'chapters\developer-workstation.gif' '2x2' 640 320
 Build-Animation 'engineering-lab.jpg' 'chapters\engineering-lab.gif' '2x2' 640 426
 Build-Animation 'hardware-workflow.jpg' 'projects\hardware-automation.gif' '1x4' 360 480
-Build-Animation 'fleet-dashboard.jpg' 'projects\fleet-dashboard.gif' 'single' 640 320 'fleet'
+# Mission 02 CHIPVEL is composed as a multi-state GIF; do not replace it with a static-scene loop.
 Build-Animation 'eyecue-vision.jpg' 'projects\eyecue-vision.gif' '2x2' 640 426
 Build-Animation 'evoting-network.jpg' 'projects\blockchain-network.gif' 'single' 640 426 'network'
 Build-Animation 'final-transmission.jpg' 'footer\final-transmission.gif' 'single' 720 405 'final'
