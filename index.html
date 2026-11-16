@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#11100f" />
+  <link rel="icon" href="assets/source/favicon.ico" type="image/x-icon" sizes="16x16 32x32 48x48 64x64 128x128 256x256" />
+  <title>Project Kōdan — The Engineering Chronicles</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink: #11100f;
+      --panel: #191715;
+      --paper: #f3e8d2;
+      --paper-dim: #b7aa95;
+      --red: #b3232d;
+      --red-dark: #78232a;
+      --line: #51483b;
+      --max: 1080px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 82px; }
+    body {
+      margin: 0;
+      background: var(--ink);
+      color: var(--paper);
+      font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+      line-height: 1.65;
+    }
+    body::before {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      content: "";
+      pointer-events: none;
+      opacity: .18;
+      background-image: url("assets/textures/halftone.svg");
+      background-size: 32px 32px;
+      mask-image: linear-gradient(90deg, #000, transparent 56%);
+    }
+    a { color: var(--paper); text-decoration-color: var(--red); text-underline-offset: 4px; }
+    a:hover { color: #fff; text-decoration-color: #ef6670; }
+    .shell { width: min(var(--max), calc(100% - 36px)); margin: 0 auto; }
+    .topline {
+      display: flex; align-items: center; justify-content: space-between; gap: 14px;
+      padding: 16px 0; border-bottom: 1px solid var(--line); color: var(--paper-dim);
+      font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
+      position: sticky; top: 0; z-index: 20; background: rgb(17 16 15 / .92); backdrop-filter: blur(12px);
+    }
+    .brand { color: var(--paper); font-weight: 800; letter-spacing: .18em; }
+    .brand b { color: var(--red); }
+    nav { display: flex; flex-wrap: wrap; gap: 14px; justify-content: flex-end; }
+    nav a { position: relative; color: var(--paper-dim); text-decoration: none; transition: color .2s ease; }
+    nav a::after { position: absolute; right: 0; bottom: -5px; left: 0; height: 1px; content: ""; background: var(--red); transform: scaleX(0); transform-origin: left; transition: transform .22s ease; }
+    nav a:hover, nav a[aria-current="location"] { color: var(--paper); }
+    nav a:hover::after, nav a[aria-current="location"]::after { transform: scaleX(1); }
+    .nav-toggle { display: none; color: var(--paper); background: transparent; border: 1px solid var(--line); padding: 8px 10px; font: inherit; cursor: pointer; }
+    .skip-link { position: fixed; top: 8px; left: 8px; z-index: 40; padding: 8px 12px; color: var(--paper); background: var(--ink); border: 1px solid var(--red); transform: translateY(-150%); }
+    .skip-link:focus { transform: translateY(0); }
+    .cover { position: relative; isolation: isolate; overflow: hidden; padding: 28px 0 18px; }
+    .cover::before, .cover::after { position: absolute; inset: 0; z-index: -1; content: ""; pointer-events: none; }
+    .cover::before { background: radial-gradient(ellipse at 50% 24%, rgb(193 18 31 / .17), transparent 54%); animation: crimson-breathe 9s ease-in-out infinite alternate; }
+    .cover::after { opacity: .3; background-image: radial-gradient(circle, rgb(242 235 221 / .65) 1px, transparent 1.7px), radial-gradient(circle, rgb(193 18 31 / .8) 1px, transparent 1.8px); background-size: 83px 97px, 127px 139px; background-position: 0 0, 38px 56px; mask-image: linear-gradient(180deg, transparent, #000 20%, #000 85%, transparent); animation: particle-drift 24s linear infinite; }
+    .cover picture { display: block; width: min(100%, 820px); margin: 0 auto; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 24px 80px rgb(0 0 0 / .4); }
+    .cover img { display: block; width: 100%; height: auto; border: 0; transform: translate3d(var(--parallax-x, 0), var(--parallax-y, 0), 0) scale(1.015); will-change: transform; }
+    .cover h1, .cover .subtitle, .cover .intro, .cover .contact-row { animation: title-arrive .8s cubic-bezier(.2,.7,.2,1) both; }
+    .cover .subtitle { animation-delay: .12s; }
+    .cover .intro { animation-delay: .2s; }
+    .cover .contact-row { animation-delay: .28s; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; }
+    h1 { margin: 24px 0 2px; font-size: clamp(32px, 7vw, 72px); line-height: .98; letter-spacing: -.045em; }
+    h1 em { color: var(--red); font-style: normal; }
+    .subtitle { color: var(--paper-dim); text-transform: uppercase; letter-spacing: .2em; font-size: 13px; }
+    .intro { max-width: 760px; color: var(--paper-dim); font-family: Georgia, serif; font-size: 19px; }
+    .contact-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0 8px; }
+    .contact-row a { padding: 7px 12px; border: 1px solid var(--line); text-decoration: none; font-size: 11px; letter-spacing: .08em; }
+    .chapter { padding: 48px 0 8px; scroll-margin-top: 82px; }
+    .chapter-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 18px; border-bottom: 1px solid var(--line); }
+    .chapter-no { color: var(--red); font-size: 12px; letter-spacing: .14em; white-space: nowrap; }
+    h2 { margin: 0 0 12px; font-size: clamp(23px, 4vw, 34px); letter-spacing: -.02em; }
+    .chapter-head { position: relative; }
+    .chapter-head::after { position: absolute; right: 0; bottom: -1px; left: 0; height: 1px; content: ""; background: linear-gradient(90deg, var(--red), transparent 70%); transform: scaleX(0); transform-origin: left; transition: transform .8s cubic-bezier(.2,.7,.2,1); }
+    .chapter-head.is-visible::after { transform: scaleX(1); }
+    .js-ready [data-reveal] { opacity: 0; transform: translate3d(0, 20px, 0); transition: opacity .65s ease, transform .65s cubic-bezier(.2,.7,.2,1); transition-delay: var(--reveal-delay, 0ms); }
+    .js-ready [data-reveal].is-visible { opacity: 1; transform: translate3d(0, 0, 0); }
+    .chapter-image { max-width: 900px; margin: 0 auto 24px; border: 1px solid var(--line); background: var(--panel); }
+    .chapter-image img { display: block; width: 100%; height: auto; }
+    .chapter-image figcaption { padding: 8px 12px; color: var(--paper-dim); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; border-top: 1px solid var(--line); }
+    .lede { max-width: 850px; color: var(--paper-dim); font-family: Georgia, serif; font-size: 17px; }
+    .terminal { padding: 18px 20px; margin: 20px 0; background: #0b0a09; border: 1px solid var(--line); border-left: 3px solid var(--red); color: var(--paper-dim); overflow-x: auto; }
+    .terminal strong { color: var(--paper); }
+    .terminal .accent { color: var(--red); }
+    .cast { max-width: 900px; margin: 24px auto; }
+    .cast img { display: block; width: 100%; border: 1px solid var(--line); }
+    .cast figcaption { color: var(--paper-dim); font-size: 11px; padding-top: 8px; }
+    .arsenal { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 22px 0; }
+    .arsenal article, .project, .metric, .timeline-card {
+      padding: 18px; background: var(--panel); border: 1px solid var(--line);
+    }
+    .arsenal h3 { margin: 0 0 8px; color: var(--red); font: 700 12px ui-monospace, monospace; letter-spacing: .14em; text-transform: uppercase; }
+    .arsenal p { margin: 0; color: var(--paper-dim); font-size: 13px; }
+    .focus-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+    .focus-card { padding: 16px; background: var(--panel); border: 1px solid var(--line); border-top: 2px solid var(--red-dark); }
+    .focus-card h3 { margin: 0 0 8px; color: var(--paper); font: 700 12px ui-monospace, monospace; letter-spacing: .08em; }
+    .focus-card p { margin: 0; color: var(--paper-dim); font: 14px/1.6 Georgia, serif; }
+    .next-cta { margin-top: 16px; padding: 14px 16px; border-left: 3px solid var(--red); color: var(--paper-dim); background: #0b0a09; }
+    .next-cta strong { color: var(--red); letter-spacing: .12em; }
+    .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .project { padding: 0; overflow: hidden; border-color: var(--line); transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease; }
+    .project:hover, .project:focus-within { transform: translateY(-4px); border-color: var(--red); box-shadow: 0 16px 38px rgb(0 0 0 / .24); }
+    .project.featured { display: grid; grid-column: 1 / -1; grid-template-columns: minmax(0, 360px) minmax(0, 1fr); align-items: center; }
+    .project.featured > figure { display: grid; align-self: stretch; place-items: center; }
+    .project.featured > figure img { max-height: 480px; object-fit: contain; }
+    .project figure { margin: 0; overflow: hidden; border-bottom: 1px solid var(--line); background: #0b0a09; }
+    .project figure img { display: block; width: 100%; height: auto; transition: transform .6s cubic-bezier(.2,.7,.2,1), filter .3s ease; }
+    .project:hover figure img, .project:focus-within figure img { transform: scale(1.025); filter: saturate(1.06); }
+    .project-copy { padding: 18px; }
+    .project-kicker { margin: 0 0 7px; color: var(--red); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
+    .project h3 { margin: 0 0 5px; font-size: 23px; }
+    .stack { color: var(--paper-dim); font-size: 11px; }
+    .stack .tech-tag { display: inline-block; margin: 3px 4px 2px 0; padding: 2px 7px; color: var(--paper-dim); border: 1px solid var(--line); background: rgb(17 16 15 / .55); font-size: 10px; letter-spacing: .03em; }
+    .project p, .project li { color: var(--paper-dim); font-size: 13px; }
+    .project ul { padding-left: 18px; margin-bottom: 12px; }
+    .project-link { display: inline-block; margin-top: 4px; color: var(--paper); font-size: 12px; font-weight: 700; }
+    .architecture { display: block; width: 100%; margin: 24px 0; border: 1px solid var(--line); }
+    .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+    .telemetry-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+    .telemetry-grid figure { min-width: 0; margin: 0; background: var(--panel); border: 1px solid var(--line); }
+    .telemetry-grid figure { position: relative; min-height: 150px; }
+    .telemetry-grid img { display: block; width: 100%; height: auto; opacity: 1; transition: opacity .35s ease; }
+    .js-ready .telemetry-grid figure.is-loading img { opacity: 0; }
+    .telemetry-grid figure.is-loaded img { opacity: 1; }
+    .js-ready .telemetry-grid figure.is-loading::before { position: absolute; inset: 0; content: ""; background: linear-gradient(100deg, transparent 20%, rgb(242 235 221 / .05) 38%, transparent 56%); background-size: 220% 100%; animation: loading-sheen 1.8s ease-in-out infinite; }
+    .telemetry-fallback { padding: 52px 16px; color: var(--paper-dim); text-align: center; font-size: 12px; }
+    .telemetry-fallback[hidden] { display: none; }
+    .metric strong { display: block; color: var(--red); font: 700 30px Georgia, serif; }
+    .metric span { color: var(--paper-dim); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+    .timeline { display: grid; gap: 10px; }
+    .timeline-card { display: grid; grid-template-columns: 190px 1fr; gap: 16px; }
+    .timeline-card time { color: var(--red); font-size: 12px; }
+    .timeline-card h3 { margin: 0 0 4px; font-size: 18px; }
+    .timeline-card p { margin: 0; color: var(--paper-dim); font-size: 13px; }
+    .certs { color: var(--paper-dim); font-size: 13px; }
+    #impact > .certs { margin-top: 24px; }
+    .final { padding: 54px 0 24px; text-align: center; }
+    .final img { display: block; width: 100%; max-width: 900px; margin: 0 auto; border: 1px solid var(--line); }
+    .final h2 { margin: 26px 0; font-size: clamp(24px, 5vw, 44px); }
+    .final h2 span { color: var(--red); }
+    .contact-chapter { position: relative; isolation: isolate; overflow: hidden; padding: 64px 0 36px; scroll-margin-top: 82px; }
+    .contact-chapter::before { position: absolute; inset: 0; z-index: -1; content: ""; pointer-events: none; background: radial-gradient(ellipse at 82% 18%, rgb(179 35 45 / .19), transparent 46%), linear-gradient(180deg, transparent, rgb(0 0 0 / .2)); }
+    .contact-chapter::after { position: absolute; top: 24px; right: max(18px, calc((100vw - var(--max)) / 2)); z-index: -1; width: 180px; height: 180px; content: ""; pointer-events: none; opacity: .16; background: url("assets/textures/halftone.svg") center / 32px 32px; mask-image: radial-gradient(circle, #000, transparent 72%); }
+    .contact-heading { max-width: 760px; margin-bottom: 30px; }
+    .contact-heading .chapter-no { display: block; margin-bottom: 8px; }
+    .contact-heading h2 { max-width: 720px; margin-bottom: 12px; font-size: clamp(29px, 5vw, 52px); line-height: 1.05; }
+    .contact-heading p { max-width: 650px; margin: 0; color: var(--paper-dim); font: 17px/1.7 Georgia, serif; }
+    .contact-layout { display: grid; grid-template-columns: minmax(220px, .8fr) minmax(0, 1.2fr); gap: 16px; align-items: start; }
+    .contact-links, .contact-form { padding: 20px; background: rgb(25 23 21 / .92); border: 1px solid var(--line); }
+    .contact-links h3, .contact-form h3 { margin: 0 0 14px; color: var(--red); font: 700 11px ui-monospace, monospace; letter-spacing: .15em; text-transform: uppercase; }
+    .contact-link { display: flex; align-items: center; gap: 12px; min-width: 0; padding: 13px 10px; border-top: 1px solid rgb(81 72 59 / .62); color: var(--paper); text-decoration: none; transition: color .2s ease, background-color .2s ease, padding .2s ease; }
+    .contact-link:hover, .contact-link:focus-visible { padding-left: 14px; color: #fff; background: rgb(179 35 45 / .1); }
+    .contact-link svg { flex: 0 0 22px; width: 22px; height: 22px; fill: currentColor; }
+    .contact-link .icon-stroke { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; }
+    .contact-link-copy { display: grid; min-width: 0; line-height: 1.35; }
+    .contact-link-copy strong { font-size: 12px; letter-spacing: .05em; }
+    .contact-link-copy span { overflow-wrap: anywhere; color: var(--paper-dim); font-size: 11px; }
+    .contact-form { display: grid; gap: 13px; }
+    .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .form-field { display: grid; gap: 5px; min-width: 0; }
+    .form-field.full { grid-column: 1 / -1; }
+    .form-field label { color: var(--paper); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .form-field input, .form-field textarea { width: 100%; padding: 10px 11px; border: 1px solid var(--line); border-radius: 0; background: #100f0e; color: var(--paper); font: 13px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .form-field textarea { min-height: 142px; resize: vertical; }
+    .form-field input::placeholder, .form-field textarea::placeholder { color: #8d8171; }
+    .form-field input[aria-invalid="true"], .form-field textarea[aria-invalid="true"] { border-color: #ef6670; }
+    .field-error { color: #ff858d; font-size: 11px; }
+    .field-error[hidden] { display: none; }
+    .form-honeypot { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; clip-path: inset(50%); }
+    .form-submit { justify-self: center; display: inline-flex; align-items: center; gap: 10px; padding: 11px 16px; border: 1px solid var(--red); background: var(--red-dark); color: var(--paper); font: 700 11px ui-monospace, monospace; letter-spacing: .12em; text-transform: uppercase; cursor: pointer; transition: transform .2s ease, background-color .2s ease, border-color .2s ease; }
+    .form-submit:hover:not(:disabled), .form-submit:focus-visible { transform: translateY(-2px); border-color: #ef6670; background: var(--red); }
+    .form-submit:disabled { cursor: wait; opacity: .7; }
+    .form-status { margin: 0; padding: 11px 13px; border-left: 3px solid var(--red); background: #100f0e; color: var(--paper); font-size: 12px; }
+    .form-status[hidden] { display: none; }
+    .form-status[data-state="error"] { border-color: #ef6670; }
+    .netlify-note { margin: 0; color: var(--paper-dim); font-size: 10px; }
+    .site-footer { display: grid; justify-items: center; gap: 6px; padding: 18px 0 34px; border-top: 1px solid var(--line); text-align: center; }
+    .site-footer strong { color: var(--paper); font-size: 10px; letter-spacing: .15em; }
+    .site-footer span { color: var(--paper-dim); font-size: 10px; letter-spacing: .1em; }
+    .site-footer a { font-size: 10px; }
+    .contact-row a, .project-link { transition: color .2s ease, border-color .2s ease, transform .2s ease; }
+    .contact-row a:hover, .contact-row a:focus-visible { color: #fff; border-color: var(--red); transform: translateY(-2px); }
+    .project-link:hover, .project-link:focus-visible { color: #fff; }
+    footer { padding: 16px 0 32px; color: var(--paper-dim); text-align: center; font-size: 10px; letter-spacing: .13em; text-transform: uppercase; }
+    @keyframes page-reveal { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes title-arrive { from { opacity: 0; transform: translateY(12px); clip-path: inset(0 0 45%); } to { opacity: 1; transform: translateY(0); clip-path: inset(0); } }
+    @keyframes crimson-breathe { from { opacity: .55; } to { opacity: 1; } }
+    @keyframes particle-drift { from { background-position: 0 0, 38px 56px; } to { background-position: 83px -194px, -89px -83px; } }
+    @keyframes loading-sheen { to { background-position: -220% 0; } }
+    .js-ready body { animation: page-reveal .7s ease both; }
+    :focus-visible { outline: 2px solid var(--red); outline-offset: 4px; }
+    @media (max-width: 700px) {
+      .shell { width: min(calc(100% - 24px), var(--max)); }
+      .topline { align-items: center; flex-wrap: wrap; flex-direction: row; }
+      .nav-toggle { display: inline-flex; align-items: center; gap: 8px; }
+      nav { display: flex; width: 100%; max-height: 0; justify-content: flex-start; overflow: hidden; padding: 0; opacity: 0; visibility: hidden; transform: translateY(-6px); transition: max-height .3s ease, opacity .2s ease, transform .3s ease, padding .3s ease, visibility 0s linear .3s; }
+      .topline.menu-open nav { max-height: 200px; padding: 8px 0 2px; opacity: 1; visibility: visible; transform: translateY(0); transition-delay: 0s; }
+      .cover { padding-top: 18px; }
+      .cover .intro { font-size: 17px; }
+      .chapter { scroll-margin-top: 150px; }
+      .arsenal, .project-grid, .stats, .telemetry-grid { grid-template-columns: 1fr; }
+      .focus-grid { grid-template-columns: 1fr; }
+      .project.featured { grid-column: auto; grid-template-columns: 1fr; }
+      .timeline-card { grid-template-columns: 1fr; gap: 4px; }
+      .contact-chapter { padding-top: 44px; scroll-margin-top: 150px; }
+      .contact-layout { grid-template-columns: 1fr; }
+      .contact-links, .contact-form { padding: 16px; }
+    }
+    @media (max-width: 420px) {
+      .form-grid { grid-template-columns: 1fr; }
+      .form-field.full { grid-column: auto; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+      .js-ready [data-reveal] { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="shell topline">
+    <div class="brand">KŌDAN <b>///</b> FIELD LOG</div>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="chapter-navigation"><span aria-hidden="true">&#9776;</span> Chapters</button>
+    <nav id="chapter-navigation" aria-label="Chapter navigation">
+      <a href="#developer">Developer</a><a href="#arsenal">Arsenal</a><a href="#missions">Missions</a><a href="#engineering">Lab</a><a href="#impact">Impact</a><a href="#journey">Journey</a><a href="#telemetry">Telemetry</a><a href="#next">Next arc</a><a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="shell" id="main-content">
+    <section class="cover" aria-labelledby="cover-title">
+      <picture><source srcset="assets/source/cover.jpg" media="(prefers-reduced-motion: reduce)"/><img src="assets/hero/hero-manga.gif" alt="The Builder stands above a crimson-lit city in the Project Kōdan manga cover." fetchpriority="high"/></picture>
+      <h1 id="cover-title">PROJECT <em>KŌDAN</em></h1>
+      <p class="subtitle">The Engineering Chronicles</p>
+      <p class="intro">A manga-inspired field log of real engineering work: instruments, test systems, backend services, computer vision and the projects that connect them.</p>
+      <div class="contact-row">
+        <a href="https://github.com/Itskoushik">GITHUB</a><a href="https://linkedin.com/in/itskoushikram">LINKEDIN</a><a href="https://itskoushik.netlify.app">PORTFOLIO</a><a href="mailto:koushik.d.ram@gmail.com">EMAIL</a><a href="https://x.com/koushik_ram18">X</a>
+      </div>
+    </section>
+
+    <section class="chapter" id="developer">
+      <div class="chapter-head"><span class="chapter-no">CHAPTER 01</span><h2>The Developer</h2></div>
+      <figure class="chapter-image"><picture><source srcset="assets/source/workstation.jpg" media="(prefers-reduced-motion: reduce)"/><img src="assets/chapters/developer-workstation.gif" alt="The Builder types at a workstation as the monitor changes through four manga frames." loading="lazy"/></picture><figcaption>Build / observe / refine</figcaption></figure>
+      <p class="lede">I'm <strong>Koushik Ram</strong>, a Software Engineer at <strong>Zing Technologies</strong> in Bengaluru. I build intelligent software and automated systems, blending AI, Python, backend engineering and cloud technologies with a passion for thoughtful UI/UX design and polished frontend experiences.</p>
+      <div class="terminal"><span class="accent">role</span> = <strong>Software Engineer</strong> &nbsp; // Zing Technologies<br/><span class="accent">interests</span> = AI · Python · Intelligent Automation · LLMs · Cloud<br/><span class="accent">craft</span> = UI/UX Design · Figma · Frontend Engineering · Scalable Systems</div>
+      <figure class="cast"><img src="assets/characters/kodan-character-sheet.jpg" alt="Original character reference sheet: the Builder, Engineer, Architect and Visionary, each representing a different engineering discipline." loading="lazy"/><figcaption>THE BUILDER · THE ENGINEER · THE ARCHITECT · THE VISIONARY — original character reference sheet</figcaption></figure>
+    </section>
+
+    <section class="chapter" id="arsenal">
+      <div class="chapter-head"><span class="chapter-no">CHAPTER 02</span><h2>The Arsenal</h2></div>
+      <img class="architecture" src="assets/animations/terminal-sequence.svg" alt="Terminal-style manga panel illustrating device discovery, regression execution and report generation."/>
+      <div class="arsenal">
+        <article><h3>Languages</h3><p>Python · JavaScript · TypeScript · Java · C/C++ · SQL</p></article>
+        <article><h3>Frameworks</h3><p>PyQt5 · FastAPI · React · Next.js · Node.js</p></article>
+        <article><h3>Data systems</h3><p>MySQL · MongoDB · SQLite · DynamoDB</p></article>
+        <article><h3>Cloud & delivery</h3><p>AWS Lambda · GCP · Docker · Kubernetes · Jenkins · GitHub Actions</p></article>
+        <article><h3>Quality</h3><p>pytest · Selenium · Postman</p></article>
+        <article><h3>Vision & chain</h3><p>OpenCV · MediaPipe · Ethereum · Solidity</p></article>
+      </div>
+      <p class="certs">Certifications: Microsoft Azure AI Essentials · Google Cloud Foundations & Generative AI · Databricks Fundamentals.</p>
+    </section>
+
+    <section class="chapter" id="missions">
+      <div class="chapter-head"><span class="chapter-no">CHAPTER 03</span><h2>The Missions</h2></div>
+      <div class="project-grid">
+        <article class="project featured">
+          <figure><picture><source srcset="assets/source/hardware-workflow.jpg" media="(prefers-reduced-motion: reduce)"/><img src="assets/projects/hardware-automation.gif" alt="Four manga panels show the ISTJ hardware workflow: connect, self-check, capture measurements and produce reports." loading="lazy"/></picture></figure>
+          <div class="project-copy">
+            <p class="project-kicker">Mission 01 · Industrial hardware test automation</p>
+            <h3>ISTJ — Integrated System Test Jig</h3>
+            <p class="stack">Python · PyQt5 · SQLite · VISA · SCPI · Serial</p>
+            <p>Built for structured testing on HAL’s ALH helicopter programme. A role-based desktop application coordinates lab instruments, runs automated sequences, checks equipment health and generates Excel/PDF reports.</p>
+            <ul><li>Multi-threaded control and recovery across oscilloscopes, DMMs, power supplies, audio analyzers and microcontrollers.</li><li>Self-checks, calibration records, device discovery/recovery and engineer/admin/meta-admin roles.</li><li>Stabilisation builds: 40 → 4 across four releases; 500+ test cases and 56 pytest regression scripts.</li><li>Reported: 40% fewer mid-test aborts, 40% faster test execution, 30% fewer cross-pipeline defects, and zero critical defects from release 3 through sign-off.</li></ul>
+            <a class="project-link" href="https://github.com/Itskoushik/ISTJ_test_jig">EXPLORE SOURCE →</a>
+          </div>
+        </article>
+        <article class="project">
+          <figure><picture><source srcset="assets/source/chipvel.jpg" media="(prefers-reduced-motion: reduce)"/><img src="assets/projects/chipvel.gif" alt="CHIPVEL: an operator aims an Android phone's rear camera at a chip while the connected app preview shows detection and PASS or FAIL inspection states." loading="lazy"/></picture></figure>
+          <div class="project-copy"><p class="project-kicker">Mission 02 · Automated chip inspection</p><h3>CHIPVEL — The Inspection Arc</h3><p class="stack">Kotlin · Jetpack Compose · Material 3 · CameraX · TensorFlow Lite · Room · DataStore · Kotlin Coroutines</p><p>Android camera-based chip inspection for a conveyor workflow. The on-device TensorFlow Lite model detects chips and markings, applies inspection rules, and presents clear PASS or FAIL results.</p><ul><li>Live CameraX preview, configurable inspection region, and stable-scene checks.</li><li>Optional buzzer/voice announcements, local inspection history, and model diagnostics/performance information.</li><li>Simulation mode tests the workflow separately from live camera inspection.</li></ul><a class="project-link" href="https://github.com/Itskoushik/chipwell_v1">EXPLORE SOURCE →</a></div>
+        </article>
+        <article class="project">
+          <figure><picture><source srcset="assets/source/eyecue-vision.jpg" media="(prefers-reduced-motion: reduce)"/><img src="assets/projects/eyecue-vision.gif" alt="Four manga frames show gaze tracking, cursor movement, hand-gesture recognition and touch-free selection." loading="lazy"/></picture></figure>
+          <div class="project-copy"><p class="project-kicker">Mission 03 · Computer vision / HCI</p><h3>EyeCue-IntelliSense</h3><p class="stack">Python · OpenCV · MediaPipe · PyAutoGUI</p><p>Gaze-based cursor movement and hand gestures for clicks and scrolling. The project reports 77% lower cursor latency after retraining on a cleaner dataset.</p><a class="project-link" href="https://github.com/Itskoushik/EyeCue-IntelliSense">EXPLORE SOURCE →</a></div>
+        </article>
+        <article class="project">
+          <figure><picture><source srcset="assets/source/evoting-network.jpg" media="(prefers-reduced-motion: reduce)"/><img src="assets/projects/blockchain-network.gif" alt="A manga voter and connected ledger network with a crimson data packet travelling between nodes." loading="lazy"/></picture></figure>
+          <div class="project-copy"><p class="project-kicker">Mission 04 · Blockchain / full stack</p><h3>E-Voting System</h3><p class="stack">Ethereum · Solidity · FastAPI · MySQL · JWT</p><p>Authenticated voter access and application data combined with on-chain vote recording through a Solidity smart contract and MetaMask.</p><a class="project-link" href="https://github.com/Itskoushik/E-Voting-System">EXPLORE SOURCE →</a></div>
+        </article>
+        <article class="project">
+          <div class="project-copy"><p class="project-kicker">Mission 05 · Web engineering</p><h3>Hayasaka Music</h3><p class="stack">Next.js · JavaScript</p><p>Music search and streaming, playlists, favourites and automatic queueing of similar tracks.</p></div>
+          <figure><picture><source srcset="assets/source/hayasaka-storyboard.jpg" media="(prefers-reduced-motion: reduce)"/><img src="assets/projects/hayasaka-music.gif" alt="Animated manga illustration of Hayasaka Music showing song discovery, playback, playlist favourites and recommended tracks." loading="lazy"/></picture></figure>
+          <div class="project-copy"><a class="project-link" href="https://github.com/Itskoushik/hayasaka.music">SOURCE →</a> · <a class="project-link" href="https://hayasakamusic.netlify.app">LIVE DEMO →</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="chapter" id="engineering">
+      <div class="chapter-head"><span class="chapter-no">CHAPTER 04</span><h2>The Engineering Lab</h2></div>
+      <figure class="chapter-image"><picture><source srcset="assets/source/engineering-lab.jpg" media="(prefers-reduced-motion: reduce)"/><img src="assets/chapters/engineering-lab.gif" alt="The Engineer adjusts a test bench while the oscilloscope waveform and instrument status change." loading="lazy"/></picture><figcaption>VISA / SCPI / serial — one instrument control layer</figcaption></figure>
+      <p class="lede">At Zing Technologies, the ISTJ system joins a PyQt5 interface to instrument control and automated execution. Separately, a Python/MongoDB task platform on AWS Lambda serves <strong>50+ users across 7 teams</strong> and reduced manual status follow-ups by <strong>80%</strong>.</p>
+      <img class="architecture" src="assets/diagrams/istj-architecture.svg" alt="ISTJ system architecture from operator and PyQt5 interface through device control and test execution to instruments, SQLite and Excel/PDF output." loading="lazy"/>
+      <img class="architecture" src="assets/animations/animated-circuit.svg" alt="A crimson signal path links the interface, control layer and hardware." loading="lazy"/>
+    </section>
+
+    <section class="chapter" id="impact">
+      <div class="chapter-head"><span class="chapter-no">CHAPTER 05</span><h2>The Impact</h2></div>
+      <img class="architecture" src="assets/diagrams/achievement-metrics.svg" alt="Impact metrics: Zing Technologies ISTJ work includes 797 passing unit tests, 1,163 total executions including 366 subtests, 56 pytest scripts, 50 or more users across 7 teams, and improvements in stability, execution speed, follow-ups, aborts and defects. Pyspiders internship outcomes include 60 percent less test setup time and 35 percent shorter release cycles." loading="lazy"/>
+      <div class="stats">
+        <div class="metric"><strong>40 → 4</strong><span>stabilisation builds</span></div>
+        <div class="metric"><strong>797</strong><span>passing unit test cases</span></div>
+        <div class="metric"><strong>80%</strong><span>fewer manual follow-ups</span></div>
+        <div class="metric"><strong>77%</strong><span>lower EyeCue cursor latency</span></div>
+      </div>
+      <p class="certs">At Pyspiders, two Python microservice testing frameworks with modular API layers, test suites and PyPI packaging cut test setup time by 60%. Release cycles were 35% shorter. These internship outcomes are separate from the Zing Technologies results.</p>
+    </section>
+
+    <section class="chapter" id="journey">
+      <div class="chapter-head"><span class="chapter-no">CHAPTER 06</span><h2>The Journey</h2></div>
+      <div class="timeline">
+        <article class="timeline-card"><time>Aug 2025 — Present</time><div><h3>Software Engineer · Zing Technologies</h3><p>Bengaluru · Hardware test automation, backend/serverless systems and test engineering. ISTJ delivery and operator onboarding at HAL; mentored two interns.</p></div></article>
+        <article class="timeline-card"><time>Jun — Jul 2025</time><div><h3>Software Engineer Intern · Pyspiders</h3><p>Two Python microservice test frameworks with PyPI packaging; CI/CD with Jenkins, Docker, Kubernetes and GitHub Actions.</p></div></article>
+        <article class="timeline-card"><time>Dec 2021 — Jul 2025</time><div><h3>B.E. Information Science & Engineering</h3><p>MVJ College of Engineering, Bengaluru · CGPA 8.54 / 10.</p></div></article>
+      </div>
+    </section>
+
+    <section class="chapter" id="telemetry">
+      <div class="chapter-head"><span class="chapter-no">FIELD DATA</span><h2>GitHub Telemetry</h2></div>
+      <div class="telemetry-grid">
+        <figure class="telemetry-card is-loading"><img src="assets/telemetry/github-stats.svg" alt="GitHub contribution and repository statistics" loading="lazy"/><figcaption class="telemetry-fallback" role="status" hidden>Telemetry card unavailable. Please try again after the next update.</figcaption></figure>
+        <figure class="telemetry-card is-loading"><img src="assets/telemetry/top-languages.svg" alt="Most-used languages across GitHub repositories" loading="lazy"/><figcaption class="telemetry-fallback" role="status" hidden>Telemetry card unavailable. Please try again after the next update.</figcaption></figure>
+        <figure class="telemetry-card is-loading"><img src="assets/telemetry/github-streak.svg" alt="GitHub contribution streak metrics" loading="lazy"/><figcaption class="telemetry-fallback" role="status" hidden>Telemetry card unavailable. Please try again after the next update.</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="chapter" id="next">
+      <div class="chapter-head"><span class="chapter-no">CHAPTER 07</span><h2>Next Arc</h2></div>
+      <div class="focus-grid">
+        <article class="focus-card"><h3>RAG &amp; LLM ENGINEERING</h3><p>Deepening my exploration of <strong>Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), and AI-powered application development.</strong></p></article>
+        <article class="focus-card"><h3>BACKEND &amp; AI APPLICATIONS</h3><p>Exploring <strong>semantic search, embedding models, vector databases, retrieval pipelines, and context-aware AI systems.</strong></p></article>
+        <article class="focus-card"><h3>DEVOPS &amp; CLOUD INFRASTRUCTURE</h3><p>Building stronger foundations in <strong>DevOps, CI/CD, Docker, Kubernetes, cloud infrastructure, and automated deployment workflows.</strong></p></article>
+      </div>
+      <p class="next-cta"><strong>OPEN TO</strong> Software Engineer opportunities involving backend engineering, AI-driven products, LLM applications, and scalable cloud-native systems.</p>
+    </section>
+
+    <section class="final">
+      <picture><source srcset="assets/source/final-transmission.jpg" media="(prefers-reduced-motion: reduce)"/><img src="assets/footer/final-transmission.gif" alt="The Builder looks over a futuristic city as crimson light and manga ink particles drift through the final scene." loading="lazy"/></picture>
+      <h2>BUILD. BREAK. <span>UNDERSTAND.</span> REBUILD.</h2>
+      <div class="contact-row" style="justify-content:center"><a href="https://github.com/Itskoushik">GITHUB</a><a href="https://linkedin.com/in/itskoushikram">LINKEDIN</a><a href="https://itskoushik.netlify.app">PORTFOLIO</a><a href="mailto:koushik.d.ram@gmail.com">EMAIL</a><a href="https://x.com/koushik_ram18">X</a></div>
+    </section>
+    <section class="contact-chapter" id="contact" aria-labelledby="contact-title">
+      <div class="contact-heading" data-reveal>
+        <span class="chapter-no">FINAL TRANSMISSION | OPEN CHANNEL</span>
+        <h2 id="contact-title">REACH ME &mdash; THE NEXT CHAPTER STARTS HERE</h2>
+        <p>Have an interesting opportunity, an engineering challenge, or an idea worth building? Let's start a conversation.</p>
+      </div>
+      <div class="contact-layout">
+        <aside class="contact-links" aria-label="Contact and profile links" data-reveal>
+          <h3>Direct channels</h3>
+          <a class="contact-link" href="mailto:koushik.d.ram@gmail.com" aria-label="Email Koushik at koushik.d.ram@gmail.com">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect class="icon-stroke" x="3" y="5" width="18" height="14" rx="1"/><path class="icon-stroke" d="m4 7 8 6 8-6"/></svg>
+            <span class="contact-link-copy"><strong>Email</strong><span>koushik.d.ram@gmail.com</span></span>
+          </a>
+          <a class="contact-link" href="https://linkedin.com/in/itskoushikram" target="_blank" rel="noopener noreferrer" aria-label="Open Koushik's LinkedIn profile in a new tab">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2ZM8.34 18H5.67V9.4h2.67ZM7 8.23a1.55 1.55 0 1 1 0-3.1 1.55 1.55 0 0 1 0 3.1ZM18.34 18h-2.67v-4.18c0-1-.02-2.28-1.39-2.28-1.39 0-1.6 1.08-1.6 2.2V18h-2.67V9.4h2.56v1.17h.04a2.8 2.8 0 0 1 2.52-1.39c2.7 0 3.2 1.78 3.2 4.1Z"/></svg>
+            <span class="contact-link-copy"><strong>LinkedIn</strong><span>linkedin.com/in/itskoushikram</span></span>
+          </a>
+          <a class="contact-link" href="https://github.com/Itskoushik" target="_blank" rel="noopener noreferrer" aria-label="Open Koushik's GitHub profile in a new tab">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.54v-2.1c-3.1.68-3.76-1.32-3.76-1.32-.5-1.3-1.24-1.65-1.24-1.65-1.01-.7.08-.69.08-.69 1.12.08 1.71 1.15 1.71 1.15 1 .1.99 2.54 3.52 1.79.1-.74.4-1.24.72-1.53-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.22 1.16-3-.12-.28-.5-1.42.11-2.96 0 0 .95-.3 3.05 1.15a10.6 10.6 0 0 1 5.55 0c2.1-1.45 3.05-1.15 3.05-1.15.61 1.54.23 2.68.11 2.96.72.78 1.16 1.78 1.16 3 0 4.29-2.61 5.24-5.1 5.52.4.35.76 1.03.76 2.08v3.08c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/></svg>
+            <span class="contact-link-copy"><strong>GitHub</strong><span>github.com/Itskoushik</span></span>
+          </a>
+          <a class="contact-link" href="assets/source/koushik_resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open Koushik Ram's resume PDF in a new tab">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h8l5 5v15H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm7 1.8V8h4.2M7 13h3a1.7 1.7 0 0 1 0 3.4H7V13Zm0 0v5m6-5v5h1.2a2.5 2.5 0 0 0 0-5H13Zm5 5v-5h3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg>
+            <span class="contact-link-copy"><strong>Resume | PDF</strong><span>View the engineering experience summary</span></span>
+          </a>
+        </aside>
+        <form class="contact-form" name="kodan-contact" method="POST" action="#contact" data-netlify="true" netlify-honeypot="bot-field" aria-label="Send a message to Koushik" data-reveal>
+          <input type="hidden" name="form-name" value="kodan-contact" />
+          <p class="form-honeypot"><label>Leave this field empty: <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+          <h3>Send a transmission</h3>
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="contact-name">Name</label>
+              <input id="contact-name" name="name" type="text" autocomplete="name" maxlength="100" required aria-describedby="contact-name-error" />
+              <span class="field-error" id="contact-name-error" hidden>Please enter your name.</span>
+            </div>
+            <div class="form-field">
+              <label for="contact-email">Email</label>
+              <input id="contact-email" name="email" type="email" autocomplete="email" maxlength="254" required aria-describedby="contact-email-error" />
+              <span class="field-error" id="contact-email-error" hidden>Enter a valid email address.</span>
+            </div>
+            <div class="form-field full">
+              <label for="contact-subject">Subject</label>
+              <input id="contact-subject" name="subject" type="text" maxlength="160" required aria-describedby="contact-subject-error" />
+              <span class="field-error" id="contact-subject-error" hidden>Add a short subject for your message.</span>
+            </div>
+            <div class="form-field full">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" name="message" rows="5" minlength="10" maxlength="5000" required aria-describedby="contact-message-error"></textarea>
+              <span class="field-error" id="contact-message-error" hidden>Write a message of at least 10 characters.</span>
+            </div>
+          </div>
+          <button class="form-submit" type="submit">Send message <span aria-hidden="true">&#8594;</span></button>
+          <p class="form-status" id="contact-status" role="status" aria-live="polite" tabindex="-1" hidden></p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="shell site-footer">
+    <strong>PROJECT K&#332;DAN &mdash; THE ENGINEERING CHRONICLES</strong>
+    <span>&copy; <time id="current-year"></time> &middot; END OF THIS CHAPTER. NOT THE STORY.</span>
+    <a href="#main-content">Back to top &#8593;</a>
+  </footer>
+  <script src="assets/js/kodan-portfolio.js" defer></script>
+</body>
+</html>
