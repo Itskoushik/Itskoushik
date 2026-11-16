@@ -159,15 +159,16 @@ During my **Pyspiders** internship, two Python microservice test frameworks and 
 
 **OPEN TO** Software Engineer opportunities involving backend engineering, AI-driven products, LLM applications, and scalable cloud-native systems.
 
-## GITHUB TELEMETRY
+## FIELD DATA — GITHUB TELEMETRY
 
 <div align="center">
-
-<img src="https://github-readme-stats.vercel.app/api?username=itskoushik&show_icons=true&bg_color=11100F&title_color=B3232D&text_color=F3E8D2&icon_color=D9CEBA&border_color=51483B" height="170" alt="GitHub contribution and repository statistics" loading="lazy"/>
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=itskoushik&layout=compact&bg_color=11100F&title_color=B3232D&text_color=F3E8D2&border_color=51483B" height="170" alt="Most-used programming languages on GitHub" loading="lazy"/>
-
-<img src="https://streak-stats.demolab.com/?user=itskoushik&background=11100F&ring=B3232D&fire=D9CEBA&currStreakLabel=B3232D&sideLabels=F3E8D2&border=51483B" height="170" alt="GitHub contribution streak" loading="lazy"/>
-
+<table>
+  <tr>
+    <td align="center" valign="top"><img src="assets/telemetry/github-stats.svg" width="380" height="190" alt="GitHub contribution and repository statistics"/></td>
+    <td align="center" valign="top"><img src="assets/telemetry/top-languages.svg" width="380" height="190" alt="Most-used programming languages across GitHub repositories"/></td>
+    <td align="center" valign="top"><img src="assets/telemetry/github-streak.svg" width="380" height="190" alt="GitHub contribution streak: current streak, longest streak, and contributions"/></td>
+  </tr>
+</table>
 </div>
 
 ## FINAL CHAPTER — BUILD. BREAK. UNDERSTAND. REBUILD.

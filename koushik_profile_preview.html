@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#11100f" />
+  <link rel="icon" href="assets/source/favicon.ico" type="image/x-icon" sizes="16x16 32x32 48x48 64x64 128x128 256x256" />
   <title>Project Kōdan — The Engineering Chronicles</title>
   <style>
     :root {
@@ -99,6 +100,9 @@
     .project-link { display: inline-block; margin-top: 4px; color: var(--paper); font-size: 12px; font-weight: 700; }
     .architecture { display: block; width: 100%; margin: 24px 0; border: 1px solid var(--line); }
     .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+    .telemetry-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+    .telemetry-grid figure { min-width: 0; margin: 0; background: var(--panel); border: 1px solid var(--line); }
+    .telemetry-grid img { display: block; width: 100%; height: auto; }
     .metric strong { display: block; color: var(--red); font: 700 30px Georgia, serif; }
     .metric span { color: var(--paper-dim); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
     .timeline { display: grid; gap: 10px; }
@@ -116,7 +120,7 @@
       .shell { width: min(100% - 24px, var(--max)); }
       .topline { align-items: flex-start; flex-direction: column; }
       nav { justify-content: flex-start; }
-      .arsenal, .project-grid, .stats { grid-template-columns: 1fr; }
+      .arsenal, .project-grid, .stats, .telemetry-grid { grid-template-columns: 1fr; }
       .focus-grid { grid-template-columns: 1fr; }
       .project.featured { grid-column: auto; }
       .timeline-card { grid-template-columns: 1fr; gap: 4px; }
@@ -232,10 +236,10 @@
 
     <section class="chapter" id="telemetry">
       <div class="chapter-head"><span class="chapter-no">FIELD DATA</span><h2>GitHub Telemetry</h2></div>
-      <div class="stats">
-        <figure class="metric"><img src="https://github-readme-stats.vercel.app/api?username=itskoushik&show_icons=true&bg_color=191715&title_color=B3232D&text_color=F3E8D2&icon_color=D9CEBA&border_color=51483B" alt="GitHub contribution and repository statistics" loading="lazy"/></figure>
-        <figure class="metric"><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=itskoushik&layout=compact&bg_color=191715&title_color=B3232D&text_color=F3E8D2&border_color=51483B" alt="Most-used languages on GitHub" loading="lazy"/></figure>
-        <figure class="metric"><img src="https://streak-stats.demolab.com/?user=itskoushik&background=191715&ring=B3232D&fire=D9CEBA&currStreakLabel=B3232D&sideLabels=F3E8D2&border=51483B" alt="GitHub contribution streak" loading="lazy"/></figure>
+      <div class="telemetry-grid">
+        <figure><img src="assets/telemetry/github-stats.svg" alt="GitHub contribution and repository statistics" loading="lazy"/></figure>
+        <figure><img src="assets/telemetry/top-languages.svg" alt="Most-used languages across GitHub repositories" loading="lazy"/></figure>
+        <figure><img src="assets/telemetry/github-streak.svg" alt="GitHub contribution streak metrics" loading="lazy"/></figure>
       </div>
     </section>
 

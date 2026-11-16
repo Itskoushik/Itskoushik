@@ -1,0 +1,58 @@
+name: Update GitHub telemetry
+
+on:
+  schedule:
+    - cron: "23 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  update-telemetry:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out profile repository
+        uses: actions/checkout@v7
+
+      - name: Generate repository statistics
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: stats
+          options: username=${{ github.repository_owner }}&show_icons=true&bg_color=191715&title_color=C1121F&text_color=F2EBDD&icon_color=C1121F&border_color=51483B&card_width=380&card_height=190
+          path: assets/telemetry/github-stats.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fail_on_error: true
+
+      - name: Generate language statistics
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: top-langs
+          options: username=${{ github.repository_owner }}&layout=compact&langs_count=5&bg_color=191715&title_color=C1121F&text_color=F2EBDD&border_color=51483B&card_width=380&card_height=190
+          path: assets/telemetry/top-languages.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fail_on_error: true
+
+      - name: Generate contribution streak
+        uses: DenverCoder1/github-readme-streak-stats@v1
+        with:
+          options: user=${{ github.repository_owner }}&background=191715&border=51483B&stroke=51483B&ring=C1121F&fire=C1121F&currStreakNum=F2EBDD&sideNums=F2EBDD&currStreakLabel=F2EBDD&sideLabels=B8AD9B&dates=B8AD9B&card_width=380&card_height=190&border_radius=8&disable_animations=true
+          path: assets/telemetry/github-streak.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Validate generated SVGs
+        run: python tools/validate_telemetry.py
+
+      - name: Commit changed telemetry assets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/telemetry/github-stats.svg assets/telemetry/top-languages.svg assets/telemetry/github-streak.svg
+          if git diff --cached --quiet; then
+            echo "Telemetry SVGs are unchanged."
+            exit 0
+          fi
+          git commit -m "Update GitHub telemetry SVGs"
+          git push
