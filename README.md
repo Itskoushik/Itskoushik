@@ -70,7 +70,7 @@ Built for structured testing on HAL’s ALH helicopter programme. ISTJ coordinat
 
 - Multi-threaded control and device recovery across oscilloscopes, digital multimeters, power supplies, audio analyzers and microcontrollers.
 - Automated sequences, equipment self-checks, calibration records, device discovery/recovery and engineer/admin/meta-admin roles.
-- Stabilisation builds fell from **40 to 4** across four releases; the test suite covered **500+ cases** and included **56 pytest regression scripts**.
+- Stabilisation builds fell from **40 to 4** across four releases. The latest fresh unit-test run passed **797 test cases** and **366 subtests** (**1,163 total executions**); the project includes **56 pytest regression scripts**.
 - Reported outcomes: **40% fewer mid-test aborts**, **40% faster test execution**, **30% fewer cross-pipeline defects**, and zero critical defects from release 3 through sign-off.
 
 <img src="assets/diagrams/istj-architecture.svg" width="100%" alt="ISTJ architecture: operator interface, PyQt5, device control, five instrument types, test execution, SQLite records and Excel/PDF reporting." loading="lazy"/>
@@ -154,9 +154,9 @@ At Zing Technologies, ISTJ work joined a PyQt5 interface to VISA/SCPI and serial
 
 ## CHAPTER 05 — THE IMPACT
 
-<img src="assets/diagrams/achievement-metrics.svg" width="100%" alt="Metrics grouped by context: professional work at Zing Technologies, internship at Pyspiders, the EyeCue personal project and academic result. Work includes 40 to 4 stabilisation builds, 500 plus cases, 56 pytest scripts, 50 plus users across 7 teams, fewer follow-ups, faster execution and fewer aborts and defects. Internship outcomes are lower setup time and shorter release cycles. EyeCue reports lower cursor latency. CGPA is 8.54 out of 10." loading="lazy"/>
+<img src="assets/diagrams/achievement-metrics.svg" width="100%" alt="Impact metrics: Zing Technologies ISTJ work includes 797 passing unit tests, 1,163 total executions including 366 subtests, 56 pytest scripts, 50 or more users across 7 teams, and improvements in stability, execution speed, follow-ups, aborts and defects. Pyspiders internship outcomes include 60 percent less test setup time and 35 percent shorter release cycles. EyeCue reports lower cursor latency. CGPA is 8.54 out of 10." loading="lazy"/>
 
-During my **Pyspiders** internship, two Python microservice test frameworks and CI/CD work were associated with **60% less test setup time** and **35% shorter release cycles**. My B.E. CGPA was **8.54 / 10**. These internship and education figures are separate from the Zing Technologies outcomes above.
+During my **Pyspiders** internship, Two Python microservice testing frameworks, modular API layers, test suites and PyPI packaging cut test setup time by **60%**. Release cycles were **35% shorter**. My B.E. CGPA was **8.54 / 10**. These internship and education figures are separate from the Zing Technologies outcomes above.
 
 ## CHAPTER 06 — THE JOURNEY
 

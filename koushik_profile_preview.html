@@ -142,10 +142,51 @@
     .timeline-card h3 { margin: 0 0 4px; font-size: 18px; }
     .timeline-card p { margin: 0; color: var(--paper-dim); font-size: 13px; }
     .certs { color: var(--paper-dim); font-size: 13px; }
+    #impact > .certs { margin-top: 24px; }
     .final { padding: 54px 0 24px; text-align: center; }
     .final img { display: block; width: 100%; max-width: 900px; margin: 0 auto; border: 1px solid var(--line); }
     .final h2 { margin: 26px 0; font-size: clamp(24px, 5vw, 44px); }
     .final h2 span { color: var(--red); }
+    .contact-chapter { position: relative; isolation: isolate; overflow: hidden; padding: 64px 0 36px; scroll-margin-top: 82px; }
+    .contact-chapter::before { position: absolute; inset: 0; z-index: -1; content: ""; pointer-events: none; background: radial-gradient(ellipse at 82% 18%, rgb(179 35 45 / .19), transparent 46%), linear-gradient(180deg, transparent, rgb(0 0 0 / .2)); }
+    .contact-chapter::after { position: absolute; top: 24px; right: max(18px, calc((100vw - var(--max)) / 2)); z-index: -1; width: 180px; height: 180px; content: ""; pointer-events: none; opacity: .16; background: url("assets/textures/halftone.svg") center / 32px 32px; mask-image: radial-gradient(circle, #000, transparent 72%); }
+    .contact-heading { max-width: 760px; margin-bottom: 30px; }
+    .contact-heading .chapter-no { display: block; margin-bottom: 8px; }
+    .contact-heading h2 { max-width: 720px; margin-bottom: 12px; font-size: clamp(29px, 5vw, 52px); line-height: 1.05; }
+    .contact-heading p { max-width: 650px; margin: 0; color: var(--paper-dim); font: 17px/1.7 Georgia, serif; }
+    .contact-layout { display: grid; grid-template-columns: minmax(220px, .8fr) minmax(0, 1.2fr); gap: 16px; align-items: start; }
+    .contact-links, .contact-form { padding: 20px; background: rgb(25 23 21 / .92); border: 1px solid var(--line); }
+    .contact-links h3, .contact-form h3 { margin: 0 0 14px; color: var(--red); font: 700 11px ui-monospace, monospace; letter-spacing: .15em; text-transform: uppercase; }
+    .contact-link { display: flex; align-items: center; gap: 12px; min-width: 0; padding: 13px 10px; border-top: 1px solid rgb(81 72 59 / .62); color: var(--paper); text-decoration: none; transition: color .2s ease, background-color .2s ease, padding .2s ease; }
+    .contact-link:hover, .contact-link:focus-visible { padding-left: 14px; color: #fff; background: rgb(179 35 45 / .1); }
+    .contact-link svg { flex: 0 0 22px; width: 22px; height: 22px; fill: currentColor; }
+    .contact-link .icon-stroke { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; }
+    .contact-link-copy { display: grid; min-width: 0; line-height: 1.35; }
+    .contact-link-copy strong { font-size: 12px; letter-spacing: .05em; }
+    .contact-link-copy span { overflow-wrap: anywhere; color: var(--paper-dim); font-size: 11px; }
+    .contact-form { display: grid; gap: 13px; }
+    .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .form-field { display: grid; gap: 5px; min-width: 0; }
+    .form-field.full { grid-column: 1 / -1; }
+    .form-field label { color: var(--paper); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .form-field input, .form-field textarea { width: 100%; padding: 10px 11px; border: 1px solid var(--line); border-radius: 0; background: #100f0e; color: var(--paper); font: 13px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .form-field textarea { min-height: 142px; resize: vertical; }
+    .form-field input::placeholder, .form-field textarea::placeholder { color: #8d8171; }
+    .form-field input[aria-invalid="true"], .form-field textarea[aria-invalid="true"] { border-color: #ef6670; }
+    .field-error { color: #ff858d; font-size: 11px; }
+    .field-error[hidden] { display: none; }
+    .form-honeypot { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; clip-path: inset(50%); }
+    .form-submit { justify-self: center; display: inline-flex; align-items: center; gap: 10px; padding: 11px 16px; border: 1px solid var(--red); background: var(--red-dark); color: var(--paper); font: 700 11px ui-monospace, monospace; letter-spacing: .12em; text-transform: uppercase; cursor: pointer; transition: transform .2s ease, background-color .2s ease, border-color .2s ease; }
+    .form-submit:hover:not(:disabled), .form-submit:focus-visible { transform: translateY(-2px); border-color: #ef6670; background: var(--red); }
+    .form-submit:disabled { cursor: wait; opacity: .7; }
+    .form-status { margin: 0; padding: 11px 13px; border-left: 3px solid var(--red); background: #100f0e; color: var(--paper); font-size: 12px; }
+    .form-status[hidden] { display: none; }
+    .form-status[data-state="error"] { border-color: #ef6670; }
+    .netlify-note { margin: 0; color: var(--paper-dim); font-size: 10px; }
+    .site-footer { display: grid; justify-items: center; gap: 6px; padding: 18px 0 34px; border-top: 1px solid var(--line); text-align: center; }
+    .site-footer strong { color: var(--paper); font-size: 10px; letter-spacing: .15em; }
+    .site-footer span { color: var(--paper-dim); font-size: 10px; letter-spacing: .1em; }
+    .site-footer a { font-size: 10px; }
     .contact-row a, .project-link { transition: color .2s ease, border-color .2s ease, transform .2s ease; }
     .contact-row a:hover, .contact-row a:focus-visible { color: #fff; border-color: var(--red); transform: translateY(-2px); }
     .project-link:hover, .project-link:focus-visible { color: #fff; }
@@ -162,7 +203,7 @@
       .topline { align-items: center; flex-wrap: wrap; flex-direction: row; }
       .nav-toggle { display: inline-flex; align-items: center; gap: 8px; }
       nav { display: flex; width: 100%; max-height: 0; justify-content: flex-start; overflow: hidden; padding: 0; opacity: 0; visibility: hidden; transform: translateY(-6px); transition: max-height .3s ease, opacity .2s ease, transform .3s ease, padding .3s ease, visibility 0s linear .3s; }
-      .topline.menu-open nav { max-height: 160px; padding: 8px 0 2px; opacity: 1; visibility: visible; transform: translateY(0); transition-delay: 0s; }
+      .topline.menu-open nav { max-height: 200px; padding: 8px 0 2px; opacity: 1; visibility: visible; transform: translateY(0); transition-delay: 0s; }
       .cover { padding-top: 18px; }
       .cover .intro { font-size: 17px; }
       .chapter { scroll-margin-top: 150px; }
@@ -170,6 +211,13 @@
       .focus-grid { grid-template-columns: 1fr; }
       .project.featured { grid-column: auto; grid-template-columns: 1fr; }
       .timeline-card { grid-template-columns: 1fr; gap: 4px; }
+      .contact-chapter { padding-top: 44px; scroll-margin-top: 150px; }
+      .contact-layout { grid-template-columns: 1fr; }
+      .contact-links, .contact-form { padding: 16px; }
+    }
+    @media (max-width: 420px) {
+      .form-grid { grid-template-columns: 1fr; }
+      .form-field.full { grid-column: auto; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -184,7 +232,7 @@
     <div class="brand">KŌDAN <b>///</b> FIELD LOG</div>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="chapter-navigation"><span aria-hidden="true">&#9776;</span> Chapters</button>
     <nav id="chapter-navigation" aria-label="Chapter navigation">
-      <a href="#developer">Developer</a><a href="#arsenal">Arsenal</a><a href="#missions">Missions</a><a href="#engineering">Lab</a><a href="#impact">Impact</a><a href="#journey">Journey</a><a href="#telemetry">Telemetry</a><a href="#next">Next arc</a>
+      <a href="#developer">Developer</a><a href="#arsenal">Arsenal</a><a href="#missions">Missions</a><a href="#engineering">Lab</a><a href="#impact">Impact</a><a href="#journey">Journey</a><a href="#telemetry">Telemetry</a><a href="#next">Next arc</a><a href="#contact">Contact</a>
     </nav>
   </header>
 
@@ -202,8 +250,8 @@
     <section class="chapter" id="developer">
       <div class="chapter-head"><span class="chapter-no">CHAPTER 01</span><h2>The Developer</h2></div>
       <figure class="chapter-image"><picture><source srcset="assets/source/workstation.jpg" media="(prefers-reduced-motion: reduce)"/><img src="assets/chapters/developer-workstation.gif" alt="The Builder types at a workstation as the monitor changes through four manga frames." loading="lazy"/></picture><figcaption>Build / observe / refine</figcaption></figure>
-      <p class="lede">I’m <strong>Koushik Ram</strong>, a Software Engineer at <strong>Zing Technologies</strong> in Bengaluru. I build software that connects people, services and hardware—from multi-threaded instrument control to serverless task platforms.</p>
-      <div class="terminal"><span class="accent">role</span> = <strong>Software Engineer</strong> &nbsp; // Zing Technologies<br/><span class="accent">focus</span> = Python · hardware test automation · backend · cloud<br/><span class="accent">principle</span> = reliable systems, useful interfaces, testable behavior</div>
+      <p class="lede">I'm <strong>Koushik Ram</strong>, a Software Engineer at <strong>Zing Technologies</strong> in Bengaluru. I build intelligent software and automated systems, blending AI, Python, backend engineering and cloud technologies with a passion for thoughtful UI/UX design and polished frontend experiences.</p>
+      <div class="terminal"><span class="accent">role</span> = <strong>Software Engineer</strong> &nbsp; // Zing Technologies<br/><span class="accent">interests</span> = AI · Python · Intelligent Automation · LLMs · Cloud<br/><span class="accent">craft</span> = UI/UX Design · Figma · Frontend Engineering · Scalable Systems</div>
       <figure class="cast"><img src="assets/characters/kodan-character-sheet.jpg" alt="Original character reference sheet: the Builder, Engineer, Architect and Visionary, each representing a different engineering discipline." loading="lazy"/><figcaption>THE BUILDER · THE ENGINEER · THE ARCHITECT · THE VISIONARY — original character reference sheet</figcaption></figure>
     </section>
 
@@ -265,14 +313,14 @@
 
     <section class="chapter" id="impact">
       <div class="chapter-head"><span class="chapter-no">CHAPTER 05</span><h2>The Impact</h2></div>
-      <img class="architecture" src="assets/diagrams/achievement-metrics.svg" alt="Metrics grouped by source: Zing Technologies work, Pyspiders internship, EyeCue project and academic result." loading="lazy"/>
+      <img class="architecture" src="assets/diagrams/achievement-metrics.svg" alt="Impact metrics: Zing Technologies ISTJ work includes 797 passing unit tests, 1,163 total executions including 366 subtests, 56 pytest scripts, 50 or more users across 7 teams, and improvements in stability, execution speed, follow-ups, aborts and defects. Pyspiders internship outcomes include 60 percent less test setup time and 35 percent shorter release cycles." loading="lazy"/>
       <div class="stats">
         <div class="metric"><strong>40 → 4</strong><span>stabilisation builds</span></div>
-        <div class="metric"><strong>500+</strong><span>test cases</span></div>
+        <div class="metric"><strong>797</strong><span>passing unit test cases</span></div>
         <div class="metric"><strong>80%</strong><span>fewer manual follow-ups</span></div>
         <div class="metric"><strong>77%</strong><span>lower EyeCue cursor latency</span></div>
       </div>
-      <p class="certs">At Pyspiders, two Python microservice test frameworks and CI/CD work were associated with 60% less test setup time and 35% shorter release cycles. These internship results are separate from the Zing Technologies outcomes.</p>
+      <p class="certs">At Pyspiders, two Python microservice testing frameworks with modular API layers, test suites and PyPI packaging cut test setup time by 60%. Release cycles were 35% shorter. These internship outcomes are separate from the Zing Technologies results.</p>
     </section>
 
     <section class="chapter" id="journey">
@@ -308,8 +356,69 @@
       <h2>BUILD. BREAK. <span>UNDERSTAND.</span> REBUILD.</h2>
       <div class="contact-row" style="justify-content:center"><a href="https://github.com/Itskoushik">GITHUB</a><a href="https://linkedin.com/in/itskoushikram">LINKEDIN</a><a href="https://itskoushik.netlify.app">PORTFOLIO</a><a href="mailto:koushik.d.ram@gmail.com">EMAIL</a><a href="https://x.com/koushik_ram18">X</a></div>
     </section>
+    <section class="contact-chapter" id="contact" aria-labelledby="contact-title">
+      <div class="contact-heading" data-reveal>
+        <span class="chapter-no">FINAL TRANSMISSION | OPEN CHANNEL</span>
+        <h2 id="contact-title">REACH ME &mdash; THE NEXT CHAPTER STARTS HERE</h2>
+        <p>Have an interesting opportunity, an engineering challenge, or an idea worth building? Let's start a conversation.</p>
+      </div>
+      <div class="contact-layout">
+        <aside class="contact-links" aria-label="Contact and profile links" data-reveal>
+          <h3>Direct channels</h3>
+          <a class="contact-link" href="mailto:koushik.d.ram@gmail.com" aria-label="Email Koushik at koushik.d.ram@gmail.com">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect class="icon-stroke" x="3" y="5" width="18" height="14" rx="1"/><path class="icon-stroke" d="m4 7 8 6 8-6"/></svg>
+            <span class="contact-link-copy"><strong>Email</strong><span>koushik.d.ram@gmail.com</span></span>
+          </a>
+          <a class="contact-link" href="https://linkedin.com/in/itskoushikram" target="_blank" rel="noopener noreferrer" aria-label="Open Koushik's LinkedIn profile in a new tab">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2ZM8.34 18H5.67V9.4h2.67ZM7 8.23a1.55 1.55 0 1 1 0-3.1 1.55 1.55 0 0 1 0 3.1ZM18.34 18h-2.67v-4.18c0-1-.02-2.28-1.39-2.28-1.39 0-1.6 1.08-1.6 2.2V18h-2.67V9.4h2.56v1.17h.04a2.8 2.8 0 0 1 2.52-1.39c2.7 0 3.2 1.78 3.2 4.1Z"/></svg>
+            <span class="contact-link-copy"><strong>LinkedIn</strong><span>linkedin.com/in/itskoushikram</span></span>
+          </a>
+          <a class="contact-link" href="https://github.com/Itskoushik" target="_blank" rel="noopener noreferrer" aria-label="Open Koushik's GitHub profile in a new tab">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.54v-2.1c-3.1.68-3.76-1.32-3.76-1.32-.5-1.3-1.24-1.65-1.24-1.65-1.01-.7.08-.69.08-.69 1.12.08 1.71 1.15 1.71 1.15 1 .1.99 2.54 3.52 1.79.1-.74.4-1.24.72-1.53-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.22 1.16-3-.12-.28-.5-1.42.11-2.96 0 0 .95-.3 3.05 1.15a10.6 10.6 0 0 1 5.55 0c2.1-1.45 3.05-1.15 3.05-1.15.61 1.54.23 2.68.11 2.96.72.78 1.16 1.78 1.16 3 0 4.29-2.61 5.24-5.1 5.52.4.35.76 1.03.76 2.08v3.08c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/></svg>
+            <span class="contact-link-copy"><strong>GitHub</strong><span>github.com/Itskoushik</span></span>
+          </a>
+          <a class="contact-link" href="assets/source/koushik_resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open Koushik Ram's resume PDF in a new tab">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h8l5 5v15H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm7 1.8V8h4.2M7 13h3a1.7 1.7 0 0 1 0 3.4H7V13Zm0 0v5m6-5v5h1.2a2.5 2.5 0 0 0 0-5H13Zm5 5v-5h3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg>
+            <span class="contact-link-copy"><strong>Resume | PDF</strong><span>View the engineering experience summary</span></span>
+          </a>
+        </aside>
+        <form class="contact-form" name="kodan-contact" method="POST" action="#contact" data-netlify="true" netlify-honeypot="bot-field" aria-label="Send a message to Koushik" data-reveal>
+          <input type="hidden" name="form-name" value="kodan-contact" />
+          <p class="form-honeypot"><label>Leave this field empty: <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+          <h3>Send a transmission</h3>
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="contact-name">Name</label>
+              <input id="contact-name" name="name" type="text" autocomplete="name" maxlength="100" required aria-describedby="contact-name-error" />
+              <span class="field-error" id="contact-name-error" hidden>Please enter your name.</span>
+            </div>
+            <div class="form-field">
+              <label for="contact-email">Email</label>
+              <input id="contact-email" name="email" type="email" autocomplete="email" maxlength="254" required aria-describedby="contact-email-error" />
+              <span class="field-error" id="contact-email-error" hidden>Enter a valid email address.</span>
+            </div>
+            <div class="form-field full">
+              <label for="contact-subject">Subject</label>
+              <input id="contact-subject" name="subject" type="text" maxlength="160" required aria-describedby="contact-subject-error" />
+              <span class="field-error" id="contact-subject-error" hidden>Add a short subject for your message.</span>
+            </div>
+            <div class="form-field full">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" name="message" rows="5" minlength="10" maxlength="5000" required aria-describedby="contact-message-error"></textarea>
+              <span class="field-error" id="contact-message-error" hidden>Write a message of at least 10 characters.</span>
+            </div>
+          </div>
+          <button class="form-submit" type="submit">Send message <span aria-hidden="true">&#8594;</span></button>
+          <p class="form-status" id="contact-status" role="status" aria-live="polite" tabindex="-1" hidden></p>
+        </form>
+      </div>
+    </section>
   </main>
+  <footer class="shell site-footer">
+    <strong>PROJECT K&#332;DAN &mdash; THE ENGINEERING CHRONICLES</strong>
+    <span>&copy; <time id="current-year"></time> &middot; END OF THIS CHAPTER. NOT THE STORY.</span>
+    <a href="#main-content">Back to top &#8593;</a>
+  </footer>
   <script src="assets/js/kodan-portfolio.js" defer></script>
-  <footer class="shell">PROJECT KŌDAN · THE ENGINEERING CHRONICLES</footer>
 </body>
 </html>
