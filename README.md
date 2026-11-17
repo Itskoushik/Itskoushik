@@ -11,13 +11,13 @@
 
 <a href="https://github.com/Itskoushik">GITHUB</a> ·
 <a href="https://linkedin.com/in/itskoushikram">LINKEDIN</a> ·
-<a href="https://itskoushik.netlify.app">PORTFOLIO</a> ·
+ ·
 <a href="mailto:koushik.d.ram@gmail.com">EMAIL</a> ·
 <a href="https://x.com/koushik_ram18">X</a>
 
 </div>
 
-> A manga-inspired field log of real engineering work: instruments, test systems, backend services, computer vision and the projects that connect them.
+> A manga-inspired chronicle of real engineering work: automation, test systems, computer vision, and projects that inspire and connect.
 
 <img src="assets/animations/chapter-divider.svg" width="100%" alt="Project Kōdan chapter divider with a crimson ink stroke." loading="lazy"/>
 
@@ -194,7 +194,7 @@ During my **Pyspiders** internship, Two Python microservice testing frameworks, 
   <img src="assets/footer/final-transmission.gif" width="85%" alt="The Builder looks out over a futuristic city as crimson light and ink particles drift through the final manga scene." loading="lazy"/>
 </p>
 
-<a href="https://github.com/Itskoushik">GitHub</a> · <a href="https://linkedin.com/in/itskoushikram">LinkedIn</a> · <a href="https://itskoushik.netlify.app">Portfolio</a> · <a href="mailto:koushik.d.ram@gmail.com">Email</a> · <a href="https://x.com/koushik_ram18">X</a>
+<a href="https://github.com/Itskoushik">GitHub</a> · <a href="https://linkedin.com/in/itskoushikram">LinkedIn</a> · <a href="mailto:koushik.d.ram@gmail.com">Email</a> · <a href="https://x.com/koushik_ram18">X</a>
 
 <img src="assets/animations/manga-emblem.svg" width="100" alt="Project Kōdan crimson engineering seal."/>
 
