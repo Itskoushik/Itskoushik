@@ -54,11 +54,12 @@
     nav a::after { position: absolute; right: 0; bottom: -5px; left: 0; height: 1px; content: ""; background: var(--red); transform: scaleX(0); transform-origin: left; transition: transform .22s ease; }
     nav a:hover, nav a[aria-current="location"] { color: var(--paper); }
     nav a:hover::after, nav a[aria-current="location"]::after { transform: scaleX(1); }
-    nav a.nav-download { display: inline-flex; align-items: center; justify-content: center; min-height: 34px; margin-left: 4px; padding: 0 12px; border: 1px solid var(--red); background: var(--red-dark); color: var(--paper); font-size: 10px; font-weight: 700; line-height: 1.2; letter-spacing: .08em; white-space: nowrap; transition: color .2s ease, background-color .2s ease, border-color .2s ease, transform .2s ease; }
+    .nav-download { display: inline-flex; align-items: center; justify-content: center; min-height: 34px; margin-left: 4px; padding: 0 12px; border: 1px solid var(--red); background: var(--red-dark); color: var(--paper); font-size: 10px; font-weight: 700; line-height: 1.2; letter-spacing: .08em; white-space: nowrap; text-decoration: none; transition: color .2s ease, background-color .2s ease, border-color .2s ease, transform .2s ease; }
+    .mobile-download { display: none; }
     nav a.nav-download::after { display: none; }
-    nav a.nav-download:hover, nav a.nav-download:focus-visible { transform: translateY(-1px); border-color: #ef6670; background: var(--red); color: #fff; }
+    .nav-download:hover, .nav-download:focus-visible { transform: translateY(-1px); border-color: #ef6670; background: var(--red); color: #fff; }
     nav a.nav-download span { display: inline-block; }
-    nav a.nav-download:hover span, nav a.nav-download:focus-visible span { animation: nav-download-label .42s cubic-bezier(.2,.7,.2,1) both; }
+    .nav-download:hover span, .nav-download:focus-visible span { animation: nav-download-label .42s cubic-bezier(.2,.7,.2,1) both; }
     .nav-toggle { display: none; color: var(--paper); background: transparent; border: 1px solid var(--line); padding: 8px 10px; font: inherit; cursor: pointer; }
     .skip-link { position: fixed; top: 8px; left: 8px; z-index: 40; padding: 8px 12px; color: var(--paper); background: var(--ink); border: 1px solid var(--red); transform: translateY(-150%); }
     .skip-link:focus { transform: translateY(0); }
@@ -200,6 +201,8 @@
       .nav-toggle { display: inline-flex; align-items: center; gap: 8px; }
       nav { display: flex; width: 100%; max-height: 0; justify-content: flex-start; overflow: hidden; padding: 0; opacity: 0; visibility: hidden; transform: translateY(-6px); transition: max-height .3s ease, opacity .2s ease, transform .3s ease, padding .3s ease, visibility 0s linear .3s; }
       .topline.menu-open nav { max-height: 200px; padding: 8px 0 2px; opacity: 1; visibility: visible; transform: translateY(0); transition-delay: 0s; }
+      nav .desktop-download { display: none; }
+      .mobile-download { display: flex; width: fit-content; margin: 12px auto 6px; }
       .cover { padding-top: 18px; }
       .cover .intro { font-size: 17px; }
       .chapter { scroll-margin-top: 150px; }
@@ -228,9 +231,10 @@
     <div class="brand">KŌDAN <b>///</b> PROJECT</div>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="chapter-navigation"><span aria-hidden="true">&#9776;</span> Chapters</button>
     <nav id="chapter-navigation" aria-label="Chapter navigation">
-      <a href="#developer">Developer</a><a href="#arsenal">Arsenal</a><a href="#missions">Missions</a><a href="#engineering">Lab</a><a href="#impact">Impact</a><a href="#journey">Journey</a><a href="#next">Next arc</a><a href="#contact">Contact</a><a class="nav-download" href="assets/source/koushik_resume.pdf" download="Koushik-Ram-Resume.pdf" aria-label="Download Koushik Ram's resume PDF" title="Downloads the resume (PDF)"><span>Download the Manga Now!</span></a>
+      <a href="#developer">Developer</a><a href="#arsenal">Arsenal</a><a href="#missions">Missions</a><a href="#engineering">Lab</a><a href="#impact">Impact</a><a href="#journey">Journey</a><a href="#next">Next arc</a><a href="#contact">Contact</a><a class="nav-download desktop-download" href="assets/source/koushik_resume.pdf" download="Koushik-Ram-Resume.pdf" aria-label="Download Koushik Ram's resume PDF" title="Downloads the resume (PDF)"><span>Download the Manga Now!</span></a>
     </nav>
   </header>
+  <a class="nav-download mobile-download" href="assets/source/koushik_resume.pdf" download="Koushik-Ram-Resume.pdf" aria-label="Download Koushik Ram's resume PDF" title="Downloads the resume (PDF)"><span>Download the Manga Now!</span></a>
 
   <main class="shell" id="main-content">
     <section class="cover" aria-labelledby="cover-title">
