@@ -49,11 +49,16 @@
     }
     .brand { color: var(--paper); font-weight: 800; letter-spacing: .18em; }
     .brand b { color: var(--red); }
-    nav { display: flex; flex-wrap: wrap; gap: 14px; justify-content: flex-end; }
+    nav { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; justify-content: flex-end; }
     nav a { position: relative; color: var(--paper-dim); text-decoration: none; transition: color .2s ease; }
     nav a::after { position: absolute; right: 0; bottom: -5px; left: 0; height: 1px; content: ""; background: var(--red); transform: scaleX(0); transform-origin: left; transition: transform .22s ease; }
     nav a:hover, nav a[aria-current="location"] { color: var(--paper); }
     nav a:hover::after, nav a[aria-current="location"]::after { transform: scaleX(1); }
+    nav a.nav-download { display: inline-flex; align-items: center; justify-content: center; min-height: 34px; margin-left: 4px; padding: 0 12px; border: 1px solid var(--red); background: var(--red-dark); color: var(--paper); font-size: 10px; font-weight: 700; line-height: 1.2; letter-spacing: .08em; white-space: nowrap; transition: color .2s ease, background-color .2s ease, border-color .2s ease, transform .2s ease; }
+    nav a.nav-download::after { display: none; }
+    nav a.nav-download:hover, nav a.nav-download:focus-visible { transform: translateY(-1px); border-color: #ef6670; background: var(--red); color: #fff; }
+    nav a.nav-download span { display: inline-block; }
+    nav a.nav-download:hover span, nav a.nav-download:focus-visible span { animation: nav-download-label .42s cubic-bezier(.2,.7,.2,1) both; }
     .nav-toggle { display: none; color: var(--paper); background: transparent; border: 1px solid var(--line); padding: 8px 10px; font: inherit; cursor: pointer; }
     .skip-link { position: fixed; top: 8px; left: 8px; z-index: 40; padding: 8px 12px; color: var(--paper); background: var(--ink); border: 1px solid var(--red); transform: translateY(-150%); }
     .skip-link:focus { transform: translateY(0); }
@@ -125,15 +130,6 @@
     .project-link { display: inline-block; margin-top: 4px; color: var(--paper); font-size: 12px; font-weight: 700; }
     .architecture { display: block; width: 100%; margin: 24px 0; border: 1px solid var(--line); }
     .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
-    .telemetry-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
-    .telemetry-grid figure { min-width: 0; margin: 0; background: var(--panel); border: 1px solid var(--line); }
-    .telemetry-grid figure { position: relative; min-height: 150px; }
-    .telemetry-grid img { display: block; width: 100%; height: auto; opacity: 1; transition: opacity .35s ease; }
-    .js-ready .telemetry-grid figure.is-loading img { opacity: 0; }
-    .telemetry-grid figure.is-loaded img { opacity: 1; }
-    .js-ready .telemetry-grid figure.is-loading::before { position: absolute; inset: 0; content: ""; background: linear-gradient(100deg, transparent 20%, rgb(242 235 221 / .05) 38%, transparent 56%); background-size: 220% 100%; animation: loading-sheen 1.8s ease-in-out infinite; }
-    .telemetry-fallback { padding: 52px 16px; color: var(--paper-dim); text-align: center; font-size: 12px; }
-    .telemetry-fallback[hidden] { display: none; }
     .metric strong { display: block; color: var(--red); font: 700 30px Georgia, serif; }
     .metric span { color: var(--paper-dim); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
     .timeline { display: grid; gap: 10px; }
@@ -191,11 +187,11 @@
     .contact-row a:hover, .contact-row a:focus-visible { color: #fff; border-color: var(--red); transform: translateY(-2px); }
     .project-link:hover, .project-link:focus-visible { color: #fff; }
     footer { padding: 16px 0 32px; color: var(--paper-dim); text-align: center; font-size: 10px; letter-spacing: .13em; text-transform: uppercase; }
+    @keyframes nav-download-label { from { opacity: .72; transform: translateY(2px); } 55% { opacity: 1; text-shadow: 0 0 8px rgb(243 232 210 / .35); } to { opacity: 1; transform: translateY(0); text-shadow: none; } }
     @keyframes page-reveal { from { opacity: 0; } to { opacity: 1; } }
     @keyframes title-arrive { from { opacity: 0; transform: translateY(12px); clip-path: inset(0 0 45%); } to { opacity: 1; transform: translateY(0); clip-path: inset(0); } }
     @keyframes crimson-breathe { from { opacity: .55; } to { opacity: 1; } }
     @keyframes particle-drift { from { background-position: 0 0, 38px 56px; } to { background-position: 83px -194px, -89px -83px; } }
-    @keyframes loading-sheen { to { background-position: -220% 0; } }
     .js-ready body { animation: page-reveal .7s ease both; }
     :focus-visible { outline: 2px solid var(--red); outline-offset: 4px; }
     @media (max-width: 700px) {
@@ -207,7 +203,7 @@
       .cover { padding-top: 18px; }
       .cover .intro { font-size: 17px; }
       .chapter { scroll-margin-top: 150px; }
-      .arsenal, .project-grid, .stats, .telemetry-grid { grid-template-columns: 1fr; }
+      .arsenal, .project-grid, .stats { grid-template-columns: 1fr; }
       .focus-grid { grid-template-columns: 1fr; }
       .project.featured { grid-column: auto; grid-template-columns: 1fr; }
       .timeline-card { grid-template-columns: 1fr; gap: 4px; }
@@ -232,7 +228,7 @@
     <div class="brand">KŌDAN <b>///</b> PROJECT</div>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="chapter-navigation"><span aria-hidden="true">&#9776;</span> Chapters</button>
     <nav id="chapter-navigation" aria-label="Chapter navigation">
-      <a href="#developer">Developer</a><a href="#arsenal">Arsenal</a><a href="#missions">Missions</a><a href="#engineering">Lab</a><a href="#impact">Impact</a><a href="#journey">Journey</a><a href="#telemetry">Telemetry</a><a href="#next">Next arc</a><a href="#contact">Contact</a>
+      <a href="#developer">Developer</a><a href="#arsenal">Arsenal</a><a href="#missions">Missions</a><a href="#engineering">Lab</a><a href="#impact">Impact</a><a href="#journey">Journey</a><a href="#next">Next arc</a><a href="#contact">Contact</a><a class="nav-download" href="assets/source/koushik_resume.pdf" download="Koushik-Ram-Resume.pdf" aria-label="Download Koushik Ram's resume PDF" title="Downloads the resume (PDF)"><span>Download the Manga Now!</span></a>
     </nav>
   </header>
 
@@ -264,7 +260,9 @@
         <article><h3>Data systems</h3><p>MySQL · MongoDB · SQLite · DynamoDB</p></article>
         <article><h3>Cloud & delivery</h3><p>AWS Lambda · GCP · Docker · Kubernetes · Jenkins · GitHub Actions</p></article>
         <article><h3>Quality</h3><p>pytest · Selenium · Postman</p></article>
-        <article><h3>Vision & chain</h3><p>OpenCV · MediaPipe · Ethereum · Solidity</p></article>
+        <article><h3>Computer vision</h3><p>OpenCV · MediaPipe</p></article>
+        <article><h3>Blockchain</h3><p>Ethereum · Solidity</p></article>
+        <article><h3>Next character development</h3><p>Currently exploring: LLMs · RAG · LangChain · LangGraph · LangSmith · CrewAI · n8n · multi-agent systems · semantic search · embeddings · vector databases</p></article>
       </div>
       <p class="certs">Certifications: Microsoft Azure AI Essentials · Google Cloud Foundations & Generative AI · Databricks Fundamentals.</p>
     </section>
@@ -332,16 +330,7 @@
       </div>
     </section>
 
-    <section class="chapter" id="telemetry">
-      <div class="chapter-head"><span class="chapter-no">FIELD DATA</span><h2>GitHub Telemetry</h2></div>
-      <div class="telemetry-grid">
-        <figure class="telemetry-card is-loading"><img src="assets/telemetry/github-stats.svg" alt="GitHub contribution and repository statistics" loading="lazy"/><figcaption class="telemetry-fallback" role="status" hidden>Telemetry card unavailable. Please try again after the next update.</figcaption></figure>
-        <figure class="telemetry-card is-loading"><img src="assets/telemetry/top-languages.svg" alt="Most-used languages across GitHub repositories" loading="lazy"/><figcaption class="telemetry-fallback" role="status" hidden>Telemetry card unavailable. Please try again after the next update.</figcaption></figure>
-        <figure class="telemetry-card is-loading"><img src="assets/telemetry/github-streak.svg" alt="GitHub contribution streak metrics" loading="lazy"/><figcaption class="telemetry-fallback" role="status" hidden>Telemetry card unavailable. Please try again after the next update.</figcaption></figure>
-      </div>
-    </section>
-
-    <section class="chapter" id="next">
+<section class="chapter" id="next">
       <div class="chapter-head"><span class="chapter-no">CHAPTER 07</span><h2>Next Arc</h2></div>
       <div class="focus-grid">
         <article class="focus-card"><h3>RAG &amp; LLM ENGINEERING</h3><p>Deepening my exploration of <strong>Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), and AI-powered application development.</strong></p></article>

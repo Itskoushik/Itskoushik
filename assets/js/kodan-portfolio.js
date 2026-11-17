@@ -34,7 +34,7 @@
 
   if ("IntersectionObserver" in window) {
     const revealTargets = document.querySelectorAll(
-      ".chapter-head, .chapter-image, .project, .architecture, .timeline-card, .focus-card, .telemetry-card, .arsenal article, .metric, .contact-heading, .contact-links, .contact-form",
+      ".chapter-head, .chapter-image, .project, .architecture, .timeline-card, .focus-card, .arsenal article, .metric, .contact-heading, .contact-links, .contact-form",
     );
     revealTargets.forEach((element, index) => {
       element.setAttribute("data-reveal", "");
@@ -92,91 +92,6 @@
       stack.append(tag);
     });
   });
-
-  document.querySelectorAll(".telemetry-card img").forEach((image) => {
-    const card = image.closest(".telemetry-card");
-    const fallback = card.querySelector(".telemetry-fallback");
-    const showImage = () => {
-      card.classList.remove("is-loading");
-      card.classList.add("is-loaded");
-    };
-    const showFallback = () => {
-      card.classList.remove("is-loading", "is-loaded");
-      image.hidden = true;
-      fallback.hidden = false;
-    };
-    image.addEventListener("load", showImage, { once: true });
-    image.addEventListener("error", showFallback, { once: true });
-    if (image.complete) {
-      image.naturalWidth ? showImage() : showFallback();
-    }
-  });
-
-  const year = document.querySelector("#current-year");
-  if (year) year.textContent = String(new Date().getFullYear());
-
-  const contactForm = document.querySelector(".contact-form");
-  const contactStatus = document.querySelector("#contact-status");
-  if (contactForm && contactStatus) {
-    const fields = [...contactForm.querySelectorAll("input[required], textarea[required]")];
-    const showFieldState = (field, invalid) => {
-      const error = document.querySelector(`#${field.id}-error`);
-      field.setAttribute("aria-invalid", String(invalid));
-      if (error) error.hidden = !invalid;
-    };
-
-    contactForm.addEventListener("invalid", (event) => {
-      if (fields.includes(event.target)) showFieldState(event.target, true);
-    }, true);
-    contactForm.addEventListener("input", (event) => {
-      if (fields.includes(event.target) && event.target.checkValidity()) {
-        showFieldState(event.target, false);
-      }
-    });
-    contactForm.addEventListener("submit", async (event) => {
-      event.preventDefault();
-      const invalidField = fields.find((field) => !field.checkValidity());
-      if (invalidField) {
-        showFieldState(invalidField, true);
-        invalidField.focus();
-        return;
-      }
-
-      const submitButton = contactForm.querySelector("[type='submit']");
-      const originalButtonText = submitButton.textContent;
-      submitButton.disabled = true;
-      submitButton.textContent = "Sending...";
-      contactForm.setAttribute("aria-busy", "true");
-      contactStatus.hidden = true;
-      contactStatus.removeAttribute("data-state");
-      contactStatus.setAttribute("role", "status");
-
-      try {
-        const payload = new URLSearchParams(new FormData(contactForm)).toString();
-        const response = await fetch("/", {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: payload,
-        });
-        if (!response.ok) throw new Error("The form endpoint returned an error.");
-
-        contactForm.reset();
-        fields.forEach((field) => showFieldState(field, false));
-        contactStatus.textContent = "Message sent. Thanks for reaching out. I'll be in touch soon.";
-        contactStatus.dataset.state = "success";
-      } catch (error) {
-        contactStatus.textContent = "Your message could not be sent right now. Please email koushik.d.ram@gmail.com instead.";
-        contactStatus.dataset.state = "error";
-        contactStatus.setAttribute("role", "alert");
-      } finally {
-        contactStatus.hidden = false;
-        contactStatus.focus();
-        submitButton.disabled = false;
-        submitButton.textContent = originalButtonText;
-        contactForm.removeAttribute("aria-busy");
-      }
-    });
-  }
 
   const heroImage = document.querySelector(".cover img");
   if (heroImage && !reduceMotion.matches && matchMedia("(hover: hover) and (pointer: fine)").matches) {

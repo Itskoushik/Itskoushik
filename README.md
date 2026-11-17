@@ -11,7 +11,6 @@
 
 <a href="https://github.com/Itskoushik">GITHUB</a> ·
 <a href="https://linkedin.com/in/itskoushikram">LINKEDIN</a> ·
- ·
 <a href="mailto:koushik.d.ram@gmail.com">EMAIL</a> ·
 <a href="https://x.com/koushik_ram18">X</a>
 
@@ -52,7 +51,9 @@ PURSUIT        Reliable systems with useful, testable interfaces
 | **Data** | MySQL · MongoDB · SQLite · DynamoDB |
 | **Cloud & delivery** | AWS Lambda · GCP · Docker · Kubernetes · Jenkins · GitHub Actions |
 | **Testing** | pytest · Selenium · Postman |
-| **Vision & blockchain** | OpenCV · MediaPipe · Ethereum · Solidity |
+| **Computer vision** | OpenCV · MediaPipe |
+| **Blockchain** | Ethereum · Solidity |
+| **Next character development** | LLMs · RAG · LangChain · LangGraph · LangSmith · CrewAI · n8n · multi-agent systems · semantic search · embeddings · vector databases (exploring) |
 
 Certifications: Microsoft Azure AI Essentials · Google Cloud Foundations & Generative AI · Databricks Fundamentals.
 
@@ -173,18 +174,6 @@ During my **Pyspiders** internship, Two Python microservice testing frameworks, 
 - **DevOps & cloud infrastructure** — Building stronger foundations in **DevOps, CI/CD, Docker, Kubernetes, cloud infrastructure, and automated deployment workflows.**
 
 **OPEN TO** Software Engineer opportunities involving backend engineering, AI-driven products, LLM applications, and scalable cloud-native systems.
-
-## FIELD DATA — GITHUB TELEMETRY
-
-<div align="center">
-<table>
-  <tr>
-    <td align="center" valign="top"><img src="assets/telemetry/github-stats.svg" width="380" height="190" alt="GitHub contribution and repository statistics"/></td>
-    <td align="center" valign="top"><img src="assets/telemetry/top-languages.svg" width="380" height="190" alt="Most-used programming languages across GitHub repositories"/></td>
-    <td align="center" valign="top"><img src="assets/telemetry/github-streak.svg" width="380" height="190" alt="GitHub contribution streak: current streak, longest streak, and contributions"/></td>
-  </tr>
-</table>
-</div>
 
 ## FINAL CHAPTER — BUILD. BREAK. UNDERSTAND. REBUILD.
 
