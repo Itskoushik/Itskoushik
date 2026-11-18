@@ -125,19 +125,18 @@ An election app combining authenticated voter access and application data with v
 
 **[Explore E-Voting source →](https://github.com/Itskoushik/E-Voting-System)**
 
-### MISSION 05 · Hayasaka Music
+### MISSION 05 · Zorofy
 
-**Web engineering** · `Next.js` `JavaScript`
+**Music discovery and playback · Full stack** · `Next.js 14` `React 18` `Tailwind CSS` `Node.js` `MongoDB` `Mongoose` `NextAuth.js` `Redux Toolkit` `YouTube Data API v3` `YouTube IFrame Player API`
 
-Music discovery and streaming with search, playlists, favourite tracks and automatic queueing of similar songs.
+Responsive music discovery for Indian and international music, bringing regional discovery, charts, new releases, playlists, search and playback into one listening experience.
 
-<div align="center">
-  <p align="center">
-    <img src="assets/projects/hayasaka-music.gif" width="80%" alt="Animated manga illustration of Hayasaka Music showing song discovery, playback, playlist favourites and recommended tracks." loading="lazy"/>
-  </p>
-</div>
+- Search music videos, playlists and artists with debounced requests, pagination and quota-aware caching.
+- Browse playlist tracks and play a queue using the official YouTube embedded player.
+- Email/password sign-in, optional Google sign-in, favourites and saved playlists.
+- Playback does not extract direct audio URLs, download media or bypass platform restrictions.
 
-**[Source →](https://github.com/Itskoushik/hayasaka.music)** · **[Live demo →](https://hayasakamusic.netlify.app)**
+**[Explore the Zorofy source](https://github.com/Itskoushik/zorofy)** · **[Live demo](https://zorofy.netlify.app/)**
 
 ## CHAPTER 04 — THE ENGINEERING LAB
 
